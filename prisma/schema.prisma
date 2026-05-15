@@ -1,0 +1,66 @@
+// PhytoGrossesse Algérie - Database Schema
+// Every plant has 3 names: General, Algerian, Scientific
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ToxicityLevel {
+  SAFE      // 🟢 Indiqué
+  CAUTION   // 🟡 Prudence
+  DANGER    // 🔴 Contre-indiqué
+}
+
+model Plant {
+  id             String   @id @default(uuid())
+  nameGeneral    String   // e.g., "Gingembre"
+  nameAlgerian   String   // e.g., "Skenjbir"
+  nameScientific String   // e.g., "Zingiber officinale"
+  toxicityLevel  ToxicityLevel
+  description    String
+
+  symptoms PlantSymptom[]
+  warnings ToxicityWarning[]
+  sources  Source[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Symptom {
+  id     String         @id @default(uuid())
+  name   String         @unique // e.g., "Nausées", "Stress"
+  plants PlantSymptom[]
+}
+
+model PlantSymptom {
+  plantId   String
+  symptomId String
+  plant     Plant   @relation(fields: [plantId], references: [id], onDelete: Cascade)
+  symptom   Symptom @relation(fields: [symptomId], references: [id], onDelete: Cascade)
+
+  @@id([plantId, symptomId])
+}
+
+model ToxicityWarning {
+  id          String @id @default(uuid())
+  plantId     String
+  trimester   Int    // 1, 2, 3 (or 0 for all trimesters)
+  warningType String // e.g., "Tératogène", "Fœtotoxique", "Abortif"
+  details     String
+  plant       Plant  @relation(fields: [plantId], references: [id], onDelete: Cascade)
+}
+
+model Source {
+  id          String  @id @default(uuid())
+  plantId     String
+  thesisTitle String
+  university  String
+  urlOrPage   String?
+  plant       Plant   @relation(fields: [plantId], references: [id], onDelete: Cascade)
+}
