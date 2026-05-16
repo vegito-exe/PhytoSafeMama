@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { getPlantImageUrl, PLANT_FALLBACK_IMAGE } from "@/lib/plant-image";
 import type { ToxicityLevel } from "@/types";
 import { TrafficLightBadge } from "./TrafficLightBadge";
-import { Leaf } from "lucide-react";
 
 interface PlantCardProps {
   nameGeneral: string;
@@ -24,11 +26,19 @@ export function PlantCard({
   className,
   onClick,
 }: PlantCardProps) {
-  // Subtle left-border color based on toxicity
+  const [imgError, setImgError] = useState(false);
+  const imageUrl = imgError ? PLANT_FALLBACK_IMAGE : getPlantImageUrl(nameGeneral);
+
   const borderAccent: Record<ToxicityLevel, string> = {
     SAFE: "border-l-emerald-400",
     CAUTION: "border-l-amber-400",
     DANGER: "border-l-rose-400",
+  };
+
+  const glowColor: Record<ToxicityLevel, string> = {
+    SAFE: "group-hover:shadow-emerald-100",
+    CAUTION: "group-hover:shadow-amber-100",
+    DANGER: "group-hover:shadow-rose-100",
   };
 
   return (
@@ -36,54 +46,63 @@ export function PlantCard({
       type="button"
       onClick={onClick}
       className={cn(
-        // Card base
-        "group relative w-full text-left rounded-2xl border border-border/60 bg-white/80 backdrop-blur-sm",
-        "p-5 shadow-sm transition-all duration-300",
-        // Left accent stripe
+        "group relative w-full text-left rounded-2xl border border-border/60",
+        "bg-white/80 backdrop-blur-sm overflow-hidden",
+        "shadow-sm transition-all duration-300",
         "border-l-4",
         borderAccent[toxicityLevel],
-        // Hover / focus
-        "hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-0.5",
+        "hover:shadow-xl hover:-translate-y-1",
+        glowColor[toxicityLevel],
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2",
         className
       )}
     >
-      {/* Header row */}
-      <div className="flex items-start justify-between gap-3">
-        {/* Names stack */}
-        <div className="min-w-0 flex-1 space-y-1">
-          {/* General name — prominent */}
-          <div className="flex items-center gap-2">
-            <Leaf className="h-4 w-4 shrink-0 text-emerald-500 opacity-70 transition-transform duration-300 group-hover:rotate-12" />
-            <h3 className="truncate text-lg font-bold text-foreground">
-              {nameGeneral}
-            </h3>
-          </div>
-
-          {/* Algerian name — subtitle */}
-          <p className="truncate text-sm font-medium text-muted-foreground/80 pl-6">
-            {nameAlgerian}
-          </p>
-
-          {/* Scientific name — italic, small */}
-          <p className="truncate text-xs italic text-muted-foreground/60 pl-6">
-            {nameScientific}
-          </p>
+      {/* Image section */}
+      <div className="relative h-40 w-full bg-gradient-to-br from-emerald-50/80 to-amber-50/30 overflow-hidden">
+        <Image
+          src={imageUrl}
+          alt={nameGeneral}
+          fill
+          sizes="(max-width: 640px) 100vw, 50vw"
+          className={cn(
+            "object-contain p-4 transition-transform duration-500 group-hover:scale-110",
+            imgError && "opacity-50 p-8"
+          )}
+          onError={() => setImgError(true)}
+          unoptimized
+        />
+        {/* Gradient overlay at bottom */}
+        <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/90 to-transparent" />
+        {/* Badge positioned on image */}
+        <div className="absolute top-3 right-3">
+          <TrafficLightBadge level={toxicityLevel} size="sm" />
         </div>
-
-        {/* Traffic-light badge */}
-        <TrafficLightBadge level={toxicityLevel} size="sm" />
       </div>
 
-      {/* Description */}
-      {description && (
-        <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-muted-foreground pl-6">
-          {description}
+      {/* Content section */}
+      <div className="p-4 pt-2">
+        {/* General name */}
+        <h3 className="text-lg font-bold text-foreground leading-tight truncate">
+          {nameGeneral}
+        </h3>
+        {/* Algerian name */}
+        <p className="text-sm font-medium text-primary/70 truncate mt-0.5">
+          {nameAlgerian}
         </p>
-      )}
+        {/* Scientific name */}
+        <p className="text-xs italic text-muted-foreground/60 truncate">
+          {nameScientific}
+        </p>
+        {/* Description */}
+        {description && (
+          <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
+            {description}
+          </p>
+        )}
+      </div>
 
-      {/* Subtle shimmer on hover */}
-      <div className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      {/* Shimmer on hover */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
     </button>
   );
 }

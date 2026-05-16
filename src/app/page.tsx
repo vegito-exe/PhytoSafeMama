@@ -1,272 +1,195 @@
-"use client";
+import Link from "next/link";
+import {
+  Leaf,
+  ShieldCheck,
+  BookOpen,
+  Stethoscope,
+  FlaskConical,
+  ArrowRight,
+  Heart,
+  Search,
+} from "lucide-react";
 
-import { useState } from "react";
-import { SearchBar } from "@/components/SearchBar";
-import { SymptomFilter } from "@/components/SymptomFilter";
-import { PlantCard } from "@/components/PlantCard";
-import { NavigationTabs, type TabValue } from "@/components/NavigationTabs";
-import { TrafficLightBadge } from "@/components/TrafficLightBadge";
-import { Leaf, ShieldCheck, BookOpen } from "lucide-react";
-import type { ToxicityLevel } from "@/types";
-
-// ──────────────────────────────────────────────
-// Sample data — will be replaced by real DB data
-// ──────────────────────────────────────────────
-const SAMPLE_PLANTS: {
-  id: string;
-  nameGeneral: string;
-  nameAlgerian: string;
-  nameScientific: string;
-  toxicityLevel: ToxicityLevel;
-  description: string;
-}[] = [
-  {
-    id: "1",
-    nameGeneral: "Gingembre",
-    nameAlgerian: "Skenjbir",
-    nameScientific: "Zingiber officinale",
-    toxicityLevel: "SAFE",
-    description:
-      "Le gingembre est considéré comme sûr pendant la grossesse. Il est souvent utilisé pour soulager les nausées matinales du premier trimestre.",
-  },
-  {
-    id: "2",
-    nameGeneral: "Sauge",
-    nameAlgerian: "Salmiya",
-    nameScientific: "Salvia officinalis",
-    toxicityLevel: "DANGER",
-    description:
-      "La sauge contient de la thuyone, une substance neurotoxique et potentiellement abortive. Son utilisation est contre-indiquée pendant toute la grossesse.",
-  },
-  {
-    id: "3",
-    nameGeneral: "Camomille",
-    nameAlgerian: "Baboundj",
-    nameScientific: "Matricaria chamomilla",
-    toxicityLevel: "CAUTION",
-    description:
-      "La camomille est généralement bien tolérée en infusion légère, mais une consommation excessive peut stimuler les contractions utérines.",
-  },
-  {
-    id: "4",
-    nameGeneral: "Menthe poivrée",
-    nameAlgerian: "Naânaâ",
-    nameScientific: "Mentha × piperita",
-    toxicityLevel: "CAUTION",
-    description:
-      "La menthe poivrée est acceptable en petites quantités. À éviter en grande quantité car elle peut causer des reflux gastro-œsophagiens.",
-  },
-  {
-    id: "5",
-    nameGeneral: "Fenouil",
-    nameAlgerian: "Besbès",
-    nameScientific: "Foeniculum vulgare",
-    toxicityLevel: "DANGER",
-    description:
-      "Le fenouil contient de l'estragole, une substance potentiellement cancérigène et œstrogénique. Déconseillé pendant la grossesse.",
-  },
-  {
-    id: "6",
-    nameGeneral: "Thym",
-    nameAlgerian: "Zaâtar",
-    nameScientific: "Thymus vulgaris",
-    toxicityLevel: "SAFE",
-    description:
-      "Le thym en infusion légère est considéré comme sûr pendant la grossesse. Il possède des propriétés antiseptiques utiles contre les maux de gorge.",
-  },
-];
-
-export default function HomePage() {
-  const [activeTab, setActiveTab] = useState<TabValue>("guide");
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedSymptom, setSelectedSymptom] = useState<string | null>(null);
-
-  // Simple client-side filter
-  const filteredPlants = SAMPLE_PLANTS.filter((plant) => {
-    if (!searchQuery) return true;
-    const q = searchQuery.toLowerCase();
-    return (
-      plant.nameGeneral.toLowerCase().includes(q) ||
-      plant.nameAlgerian.toLowerCase().includes(q) ||
-      plant.nameScientific.toLowerCase().includes(q)
-    );
-  });
-
+export default function LandingPage() {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* ─── Hero Section ─────────────────────────── */}
-      <header className="bg-gradient-hero relative overflow-hidden">
-        {/* Decorative circles */}
-        <div className="pointer-events-none absolute -top-20 -right-20 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-10 -left-10 h-56 w-56 rounded-full bg-emerald-200/20 blur-2xl" />
+    <div className="flex flex-col">
+      {/* ─── Hero ─────────────────────────────────── */}
+      <section className="bg-gradient-hero relative overflow-hidden">
+        {/* Decorative blurs */}
+        <div className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-emerald-200/20 blur-2xl" />
+        <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-amber-100/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-5xl px-4 pb-10 pt-12 sm:px-6 lg:px-8">
-          {/* Brand */}
-          <div className="flex items-center justify-center gap-3 mb-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
-              <Leaf className="h-6 w-6 text-primary" />
-            </div>
-            <h1 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-              Phyto<span className="text-primary">Grossesse</span>{" "}
-              <span className="text-muted-foreground font-medium">Algérie</span>
-            </h1>
+        <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36 text-center">
+          {/* Logo icon */}
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 shadow-sm">
+            <Leaf className="h-9 w-9 text-primary" />
           </div>
 
-          {/* Tagline */}
-          <p className="mx-auto mt-3 max-w-xl text-center text-base text-muted-foreground leading-relaxed">
-            Vérifiez la sécurité des plantes médicinales pendant votre grossesse.
-            <br />
-            <span className="text-sm">
-              Données issues de <strong>thèses universitaires algériennes</strong>.
-            </span>
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            PhytoSafe<span className="text-primary">Mama</span>{" "}
+            <span className="text-muted-foreground font-semibold">Algérie</span>
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
+            Vérifiez la sécurité des{" "}
+            <strong className="text-foreground">plantes médicinales</strong>{" "}
+            pendant votre grossesse. Un guide scientifique basé sur des{" "}
+            <strong className="text-foreground">
+              thèses universitaires algériennes
+            </strong>
+            .
           </p>
 
-          {/* Trust indicators */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground/70">
-            <span className="flex items-center gap-1.5">
-              <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
+          {/* Trust badges */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground/80">
+            <span className="flex items-center gap-2">
+              <ShieldCheck className="h-4 w-4 text-emerald-500" />
               Sources académiques vérifiées
             </span>
-            <span className="hidden sm:inline text-border">|</span>
-            <span className="flex items-center gap-1.5">
-              <BookOpen className="h-3.5 w-3.5 text-primary/60" />
-              Guide pratique pour futures mamans
+            <span className="flex items-center gap-2">
+              <Heart className="h-4 w-4 text-rose-400" />
+              Conçu pour les futures mamans
+            </span>
+            <span className="flex items-center gap-2">
+              <BookOpen className="h-4 w-4 text-primary/70" />
+              100% gratuit
             </span>
           </div>
 
-          {/* Search Bar */}
-          <div className="mt-8">
-            <SearchBar onSearch={setSearchQuery} />
+          {/* CTA buttons */}
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link
+              href="/guide"
+              className="inline-flex items-center gap-2 rounded-2xl bg-primary px-8 py-3.5 text-base font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all duration-200 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5"
+            >
+              <Search className="h-5 w-5" />
+              Consulter le Guide
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/symptoms"
+              className="inline-flex items-center gap-2 rounded-2xl border border-border/60 bg-white/70 px-8 py-3.5 text-base font-semibold text-foreground shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-md hover:-translate-y-0.5"
+            >
+              <Stethoscope className="h-5 w-5 text-primary/70" />
+              Trouver par symptôme
+            </Link>
           </div>
-
-          {/* Symptom Quick Filters */}
-          <div className="mt-5">
-            <SymptomFilter
-              symptoms={[
-                "Nausées",
-                "Stress",
-                "Insomnie",
-                "Douleurs",
-                "Digestion",
-                "Fatigue",
-              ]}
-              onSelect={setSelectedSymptom}
-            />
-          </div>
         </div>
-      </header>
+      </section>
 
-      {/* ─── Navigation Tabs ──────────────────────── */}
-      <div className="sticky top-0 z-30 border-b border-border/40 bg-background/80 backdrop-blur-lg">
-        <div className="mx-auto max-w-5xl px-4 py-2 sm:px-6 lg:px-8">
-          <NavigationTabs value={activeTab} onChange={setActiveTab} />
-        </div>
-      </div>
+      {/* ─── Features Grid ────────────────────────── */}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
+          Votre santé, notre priorité
+        </h2>
+        <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
+          Trois outils complémentaires pour vous accompagner tout au long de
+          votre grossesse.
+        </p>
 
-      {/* ─── Main Content ─────────────────────────── */}
-      <main className="flex-1">
-        <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
-          {/* Tab: Le Guide des Plantes */}
-          {activeTab === "guide" && (
-            <section>
-              {/* Legend */}
-              <div className="mb-6 flex flex-wrap items-center gap-3">
-                <span className="text-sm font-medium text-muted-foreground">
-                  Légende :
-                </span>
-                <TrafficLightBadge level="SAFE" size="sm" />
-                <TrafficLightBadge level="CAUTION" size="sm" />
-                <TrafficLightBadge level="DANGER" size="sm" />
-              </div>
-
-              {/* Plant Grid */}
-              <div className="grid gap-4 sm:grid-cols-2">
-                {filteredPlants.map((plant) => (
-                  <PlantCard
-                    key={plant.id}
-                    nameGeneral={plant.nameGeneral}
-                    nameAlgerian={plant.nameAlgerian}
-                    nameScientific={plant.nameScientific}
-                    toxicityLevel={plant.toxicityLevel}
-                    description={plant.description}
-                  />
-                ))}
-              </div>
-
-              {filteredPlants.length === 0 && (
-                <div className="py-16 text-center">
-                  <Leaf className="mx-auto h-12 w-12 text-muted-foreground/30" />
-                  <p className="mt-4 text-muted-foreground">
-                    Aucune plante trouvée pour « {searchQuery} »
-                  </p>
-                </div>
-              )}
-            </section>
-          )}
-
-          {/* Tab: Maux & Solutions */}
-          {activeTab === "symptoms" && (
-            <section className="py-12 text-center">
-              <div className="mx-auto max-w-md">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
-                  <Leaf className="h-8 w-8 text-primary" />
-                </div>
-                <h2 className="text-xl font-bold text-foreground">
-                  Maux & Solutions
-                </h2>
-                <p className="mt-2 text-muted-foreground">
-                  Sélectionnez un symptôme pour découvrir les plantes recommandées
-                  et celles à éviter pendant votre grossesse.
-                </p>
-                {selectedSymptom && (
-                  <p className="mt-4 rounded-xl bg-primary/5 p-4 text-sm text-primary font-medium">
-                    Filtre actif : <strong>{selectedSymptom}</strong> — Contenu
-                    bientôt disponible.
-                  </p>
-                )}
-              </div>
-            </section>
-          )}
-
-          {/* Tab: Le Coin Scientifique */}
-          {activeTab === "science" && (
-            <section className="py-12 text-center">
-              <div className="mx-auto max-w-md">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10">
-                  <BookOpen className="h-8 w-8 text-primary" />
-                </div>
-                <h2 className="text-xl font-bold text-foreground">
-                  Le Coin Scientifique
-                </h2>
-                <p className="mt-2 text-muted-foreground">
-                  Explorez les données scientifiques détaillées, issues de thèses
-                  universitaires algériennes, sur la phytothérapie pendant la
-                  grossesse.
-                </p>
-                <p className="mt-4 rounded-xl bg-amber-50 border border-amber-200/50 p-4 text-sm text-amber-700">
-                  🔬 Section réservée aux professionnels de santé — Contenu
-                  bientôt disponible.
-                </p>
-              </div>
-            </section>
-          )}
-        </div>
-      </main>
-
-      {/* ─── Footer ───────────────────────────────── */}
-      <footer className="border-t border-border/40 bg-muted/30">
-        <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
-            <p className="text-xs text-muted-foreground/60">
-              © 2026 PhytoGrossesse Algérie — Données à titre informatif uniquement.
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          {/* Card 1 */}
+          <Link
+            href="/guide"
+            className="group rounded-2xl border border-border/50 bg-white/60 p-6 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20"
+          >
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 transition-colors group-hover:bg-emerald-100">
+              <BookOpen className="h-6 w-6 text-emerald-600" />
+            </div>
+            <h3 className="text-lg font-bold text-foreground">
+              Le Guide des Plantes
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Explorez notre base de données complète de plantes médicinales avec
+              leur niveau de sécurité pendant la grossesse.
             </p>
-            <p className="text-xs text-muted-foreground/60">
-              ⚠️ Consultez toujours votre médecin avant d&apos;utiliser des plantes
-              pendant la grossesse.
+            <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-transform group-hover:translate-x-1">
+              Explorer <ArrowRight className="h-3.5 w-3.5" />
+            </span>
+          </Link>
+
+          {/* Card 2 */}
+          <Link
+            href="/symptoms"
+            className="group rounded-2xl border border-border/50 bg-white/60 p-6 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20"
+          >
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 transition-colors group-hover:bg-amber-100">
+              <Stethoscope className="h-6 w-6 text-amber-600" />
+            </div>
+            <h3 className="text-lg font-bold text-foreground">
+              Maux & Solutions
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Sélectionnez un symptôme pour découvrir quelles plantes sont
+              recommandées et lesquelles éviter.
             </p>
+            <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-transform group-hover:translate-x-1">
+              Trouver <ArrowRight className="h-3.5 w-3.5" />
+            </span>
+          </Link>
+
+          {/* Card 3 */}
+          <Link
+            href="/science"
+            className="group rounded-2xl border border-border/50 bg-white/60 p-6 backdrop-blur-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary/20"
+          >
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-50 transition-colors group-hover:bg-violet-100">
+              <FlaskConical className="h-6 w-6 text-violet-600" />
+            </div>
+            <h3 className="text-lg font-bold text-foreground">
+              Le Coin Scientifique
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Accédez aux données détaillées issues de thèses universitaires pour
+              les professionnels de santé.
+            </p>
+            <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary transition-transform group-hover:translate-x-1">
+              Découvrir <ArrowRight className="h-3.5 w-3.5" />
+            </span>
+          </Link>
+        </div>
+      </section>
+
+      {/* ─── How it works ─────────────────────────── */}
+      <section className="border-t border-border/30 bg-muted/20">
+        <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 text-center">
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+            Comment ça marche ?
+          </h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-3">
+            {[
+              {
+                step: "1",
+                title: "Recherchez",
+                desc: "Tapez le nom de la plante en français, algérien ou scientifique.",
+              },
+              {
+                step: "2",
+                title: "Vérifiez",
+                desc: "Consultez le niveau de sécurité : Indiqué 🟢, Prudence 🟡, Contre-indiqué 🔴.",
+              },
+              {
+                step: "3",
+                title: "Informez-vous",
+                desc: "Lisez les détails par trimestre et les sources scientifiques.",
+              },
+            ].map((item) => (
+              <div key={item.step} className="flex flex-col items-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-lg font-bold text-primary">
+                  {item.step}
+                </div>
+                <h3 className="mt-4 text-lg font-bold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm text-muted-foreground max-w-xs">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }

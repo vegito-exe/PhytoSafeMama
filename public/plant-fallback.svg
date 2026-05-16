@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" rx="24" fill="#f0fdf4"/>
+  <g transform="translate(40, 30)">
+    <!-- Tea cup -->
+    <path d="M20 90 C20 90 15 130 30 140 C45 150 75 150 90 140 C105 130 100 90 100 90" fill="#dcfce7" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+    <path d="M20 90 L100 90" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+    <!-- Cup handle -->
+    <path d="M100 100 C115 100 120 110 120 120 C120 130 115 135 100 135" fill="none" stroke="#22c55e" stroke-width="3" stroke-linecap="round"/>
+    <!-- Saucer -->
+    <ellipse cx="60" cy="150" rx="55" ry="8" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <!-- Leaf 1 -->
+    <path d="M50 75 C50 40 75 20 75 20 C75 20 80 50 65 70 C60 77 50 75 50 75Z" fill="#4ade80" stroke="#22c55e" stroke-width="2"/>
+    <path d="M62 20 C58 45 53 65 50 75" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Leaf 2 -->
+    <path d="M70 80 C85 50 80 25 80 25 C80 25 100 45 90 72 C85 82 70 80 70 80Z" fill="#86efac" stroke="#22c55e" stroke-width="2"/>
+    <path d="M80 25 C85 48 78 68 70 80" fill="none" stroke="#22c55e" stroke-width="1.5" stroke-linecap="round"/>
+    <!-- Steam -->
+    <path d="M40 80 C38 70 42 65 40 55" fill="none" stroke="#bbf7d0" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <path d="M55 78 C53 68 57 60 55 50" fill="none" stroke="#bbf7d0" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  </g>
+</svg>

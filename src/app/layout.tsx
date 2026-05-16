@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Geist_Mono } from "next/font/google";
+import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -37,7 +38,26 @@ export default function RootLayout({
       lang="fr"
       className={`${outfit.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        <main className="flex-1">{children}</main>
+
+        {/* Footer */}
+        <footer className="border-t border-border/40 bg-muted/30">
+          <div className="mx-auto max-w-6xl px-4 py-6 sm:px-6 lg:px-8">
+            <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
+              <p className="text-xs text-muted-foreground/60">
+                © 2026 PhytoGrossesse Algérie — Données à titre informatif
+                uniquement.
+              </p>
+              <p className="text-xs text-muted-foreground/60">
+                ⚠️ Consultez toujours votre médecin avant d&apos;utiliser des
+                plantes pendant la grossesse.
+              </p>
+            </div>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
