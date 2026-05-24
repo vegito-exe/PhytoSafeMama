@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+
 import {
   Leaf,
   ShieldCheck,
@@ -14,16 +16,16 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col">
       {/* ─── Hero ─────────────────────────────────── */}
-      <section className="bg-gradient-hero relative overflow-hidden">
+      <section className=" relative overflow-hidden">
         {/* Decorative blurs */}
         <div className="pointer-events-none absolute -top-24 -right-24 h-80 w-80 rounded-full bg-primary/5 blur-3xl" />
         <div className="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-emerald-200/20 blur-2xl" />
         <div className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-amber-100/10 blur-3xl" />
 
-        <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36 text-center">
+        <div className="relative mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:pb-28 lg:px-8 lg:pb-36 text-center">
           {/* Logo icon */}
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 shadow-sm">
-            <Leaf className="h-9 w-9 text-primary" />
+          <div className="mx-auto mb-6 flex h-40 w-40 items-center justify-center rounded-2xl shadow-sm">
+            <Image width={400} height={400} src={"/logo.svg"} alt="logo" />
           </div>
 
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
