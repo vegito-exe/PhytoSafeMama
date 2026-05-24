@@ -28,16 +28,16 @@ export default function LandingPage() {
             <Image width={400} height={400} src={"/logo.svg"} alt="logo" />
           </div>
 
-          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-green-900 sm:text-5xl lg:text-6xl">
             PhytoSafe<span className="text-primary">Mama</span>{" "}
             <span className="text-muted-foreground font-semibold">Algérie</span>
           </h1>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
             Vérifiez la sécurité des{" "}
-            <strong className="text-foreground">plantes médicinales</strong>{" "}
+            <strong className="text-green-900">plantes médicinales</strong>{" "}
             pendant votre grossesse. Un guide scientifique basé sur des{" "}
-            <strong className="text-foreground">
+            <strong className="text-green-900">
               thèses universitaires algériennes
             </strong>
             .
@@ -71,7 +71,7 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/symptoms"
-              className="inline-flex items-center gap-2 rounded-2xl border border-border/60 bg-white/70 px-8 py-3.5 text-base font-semibold text-foreground shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-md hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-2xl border border-border/60 bg-white/70 px-8 py-3.5 text-base font-semibold text-green-900 shadow-sm backdrop-blur-sm transition-all duration-200 hover:bg-white hover:shadow-md hover:-translate-y-0.5"
             >
               <Stethoscope className="h-5 w-5 text-primary/70" />
               Trouver par symptôme
@@ -82,7 +82,7 @@ export default function LandingPage() {
 
       {/* ─── Features Grid ────────────────────────── */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <h2 className="text-center text-2xl font-bold text-foreground sm:text-3xl">
+        <h2 className="text-center text-2xl font-bold text-green-900 sm:text-3xl">
           Votre santé, notre priorité
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
@@ -99,7 +99,7 @@ export default function LandingPage() {
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-50 transition-colors group-hover:bg-emerald-100">
               <BookOpen className="h-6 w-6 text-emerald-600" />
             </div>
-            <h3 className="text-lg font-bold text-foreground">
+            <h3 className="text-lg font-bold text-green-900">
               Le Guide des Plantes
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -119,7 +119,7 @@ export default function LandingPage() {
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-50 transition-colors group-hover:bg-amber-100">
               <Stethoscope className="h-6 w-6 text-amber-600" />
             </div>
-            <h3 className="text-lg font-bold text-foreground">
+            <h3 className="text-lg font-bold text-green-900">
               Maux & Solutions
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -139,7 +139,7 @@ export default function LandingPage() {
             <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-violet-50 transition-colors group-hover:bg-violet-100">
               <FlaskConical className="h-6 w-6 text-violet-600" />
             </div>
-            <h3 className="text-lg font-bold text-foreground">
+            <h3 className="text-lg font-bold text-green-900">
               Le Coin Scientifique
             </h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -156,7 +156,7 @@ export default function LandingPage() {
       {/* ─── How it works ─────────────────────────── */}
       <section className="border-t border-border/30 bg-muted/20">
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 text-center">
-          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+          <h2 className="text-2xl font-bold text-green-900 sm:text-3xl">
             Comment ça marche ?
           </h2>
           <div className="mt-10 grid gap-8 sm:grid-cols-3">
@@ -177,11 +177,11 @@ export default function LandingPage() {
                 desc: "Lisez les détails par trimestre et les sources scientifiques.",
               },
             ].map((item) => (
-              <div key={item.step} className="flex flex-col items-center">
+              <div key={item.step} className="flex flex-col items-center backdrop-blur rounded-2xl bg-white/50 py-2 border">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-lg font-bold text-primary">
                   {item.step}
                 </div>
-                <h3 className="mt-4 text-lg font-bold text-foreground">
+                <h3 className="mt-4 text-lg font-bold text-green-900">
                   {item.title}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground max-w-xs">

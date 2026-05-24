@@ -4,12 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { Leaf, BookOpen, Stethoscope, FlaskConical, Home } from "lucide-react";
+import { Leaf, BookOpen, Stethoscope, FlaskConical, Home, Heart } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Accueil", icon: Home },
   { href: "/guide", label: "Guide des Plantes", icon: BookOpen },
   { href: "/symptoms", label: "Maux & Solutions", icon: Stethoscope },
+  { href: "/conseils", label: "Grossesse & Conseils", icon: Heart },
   { href: "/science", label: "Coin Scientifique", icon: FlaskConical },
 ];
 
@@ -25,10 +26,10 @@ export function Navbar() {
             <Image src="/logo.svg" alt="Logo" width={64} height={64} />
           </div>
           <div className="flex flex-col">
-            <span className="text-lg font-bold tracking-tight text-foreground hidden sm:inline">
+            <span className="text-lg font-bold tracking-tight text-green-900 hidden sm:inline">
               PhytoSafe_<span className="text-primary">Mama</span>
             </span>
-            <span className="text-sm tracking-tight text-foreground">Plantes medicinale & grossesse</span>
+            <span className="text-sm tracking-tight text-green-900">Plantes medicinale & grossesse</span>
           </div>
         </Link>
 
@@ -45,7 +46,7 @@ export function Navbar() {
                   "flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200",
                   isActive
                     ? "bg-primary/10 text-primary"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                    : "text-muted-foreground hover:bg-muted hover:text-green-900"
                 )}
               >
                 <Icon className="h-4 w-4 shrink-0" />
