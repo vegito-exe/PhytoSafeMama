@@ -1,8 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { ChevronRight, ShieldCheck, Leaf, Heart, AlertTriangle } from "lucide-react";
+import { Modal } from "@/components/ui/modal";
 
 export default function ConseilsPage() {
+  const [activeModal, setActiveModal] = useState<number | null>(null);
+
   return (
     <div className="flex flex-col min-h-screen pt-24 pb-12">
       {/* ─── Breadcrumb ─────────────────────────────────── */}
@@ -112,9 +118,12 @@ export default function ConseilsPage() {
                 à se former et votre corps s'adapte.
               </p>
 
-              <Link href="#" className="w-full py-2.5 px-4 rounded-lg border-2 border-[#E91E8C]/30 text-[#E91E8C] font-semibold hover:bg-[#E91E8C]/5 transition-colors">
+              <button 
+                onClick={() => setActiveModal(1)}
+                className="w-full py-2.5 px-4 rounded-lg border-2 border-[#E91E8C]/30 text-[#E91E8C] font-semibold hover:bg-[#E91E8C]/5 transition-colors"
+              >
                 En savoir plus →
-              </Link>
+              </button>
             </div>
 
             {/* Card 2 */}
@@ -130,9 +139,12 @@ export default function ConseilsPage() {
                 généralement plus en forme.
               </p>
 
-              <Link href="#" className="w-full py-2.5 px-4 rounded-lg border-2 border-green-600/30 text-green-700 font-semibold hover:bg-green-50 transition-colors">
+              <button 
+                onClick={() => setActiveModal(2)}
+                className="w-full py-2.5 px-4 rounded-lg border-2 border-green-600/30 text-green-700 font-semibold hover:bg-green-50 transition-colors"
+              >
                 En savoir plus →
-              </Link>
+              </button>
             </div>
 
             {/* Card 3 */}
@@ -148,9 +160,12 @@ export default function ConseilsPage() {
                 pour la naissance.
               </p>
 
-              <Link href="#" className="w-full py-2.5 px-4 rounded-lg border-2 border-[#E91E8C]/30 text-[#E91E8C] font-semibold hover:bg-[#E91E8C]/5 transition-colors">
+              <button 
+                onClick={() => setActiveModal(3)}
+                className="w-full py-2.5 px-4 rounded-lg border-2 border-[#E91E8C]/30 text-[#E91E8C] font-semibold hover:bg-[#E91E8C]/5 transition-colors"
+              >
                 En savoir plus →
-              </Link>
+              </button>
             </div>
 
           </div>
@@ -198,7 +213,47 @@ export default function ConseilsPage() {
           </div>
         </div>
       </section>
-      
+
+      {/* Trimester Modals */}
+      <Modal isOpen={activeModal === 1} onClose={() => setActiveModal(null)} title="1er trimestre (0 - 12 semaines)">
+        <div className="space-y-4 text-slate-700">
+          <p>
+            Le premier trimestre est fondamental : c’est la période de l'embryogenèse. Tous les organes de votre bébé se forment.
+          </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li><strong>Changements corporels :</strong> Nausées, fatigue intense, et sensibilité aux odeurs sont fréquents.</li>
+            <li><strong>Précautions :</strong> C'est la période la plus à risque pour les fausses couches. Soyez très prudente avec l'automédication et les plantes. L'acide folique (vitamine B9) est essentiel.</li>
+            <li><strong>Plantes à éviter absolument :</strong> Toutes les plantes abortives et celles contenant des huiles essentielles riches en cétones (ex: romarin, menthe poivrée).</li>
+          </ul>
+        </div>
+      </Modal>
+
+      <Modal isOpen={activeModal === 2} onClose={() => setActiveModal(null)} title="2ème trimestre (13 - 26 semaines)">
+        <div className="space-y-4 text-slate-700">
+          <p>
+            Généralement considéré comme le trimestre le plus agréable. Le risque de fausse couche diminue drastiquement et les nausées disparaissent souvent.
+          </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li><strong>Développement :</strong> Le bébé entend, bouge, et vous pouvez commencer à sentir ses coups de pied.</li>
+            <li><strong>Maux fréquents :</strong> Remontées acides, maux de dos, et parfois crampes nocturnes.</li>
+            <li><strong>Phytothérapie :</strong> Quelques plantes douces (comme la camomille ou le gingembre léger) peuvent être utilisées pour la digestion, mais toujours demander l'avis d'un professionnel.</li>
+          </ul>
+        </div>
+      </Modal>
+
+      <Modal isOpen={activeModal === 3} onClose={() => setActiveModal(null)} title="3ème trimestre (27 - 40 semaines)">
+        <div className="space-y-4 text-slate-700">
+          <p>
+            Le bébé grandit rapidement et votre ventre s'arrondit considérablement, ce qui peut entraîner une nouvelle fatigue.
+          </p>
+          <ul className="list-disc pl-5 space-y-2">
+            <li><strong>Changements :</strong> Essoufflement, insomnies, contractions de Braxton-Hicks (fausses contractions) et préparation du corps à l'accouchement.</li>
+            <li><strong>Plantes utiles (en fin de grossesse) :</strong> Les tisanes de feuilles de framboisier sont souvent recommandées (à partir de la 36ème semaine uniquement) pour tonifier l'utérus en vue de l'accouchement.</li>
+            <li><strong>Attention :</strong> Restez toujours vigilante, certaines plantes peuvent déclencher prématurément le travail.</li>
+          </ul>
+        </div>
+      </Modal>
+
     </div>
   );
 }

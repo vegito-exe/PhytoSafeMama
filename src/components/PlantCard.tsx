@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { getPlantImageUrl, PLANT_FALLBACK_IMAGE } from "@/lib/plant-image";
 import type { ToxicityLevel } from "@/types";
 import { TrafficLightBadge } from "./TrafficLightBadge";
+import { Modal } from "./ui/modal";
 
 interface PlantCardProps {
   nameGeneral: string;
@@ -27,6 +28,7 @@ export function PlantCard({
   onClick,
 }: PlantCardProps) {
   const [imgError, setImgError] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const imageUrl = imgError ? PLANT_FALLBACK_IMAGE : getPlantImageUrl(nameGeneral);
 
   const borderAccent: Record<ToxicityLevel, string> = {
@@ -42,11 +44,15 @@ export function PlantCard({
   };
 
   return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={cn(
-        "group relative w-full text-left rounded-2xl border border-border/60",
+    <>
+      <button
+        type="button"
+        onClick={() => {
+          setIsModalOpen(true);
+          onClick?.();
+        }}
+        className={cn(
+          "group relative w-full text-left rounded-2xl border border-border/60",
         "bg-white/80 backdrop-blur-sm overflow-hidden",
         "shadow-sm transition-all duration-300",
         "border-l-4",
@@ -103,6 +109,47 @@ export function PlantCard({
 
       {/* Shimmer on hover */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-    </button>
+      </button>
+
+      {/* Plant Details Modal */}
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <div className="flex flex-col">
+          {/* Header Image inside Modal */}
+          <div className="relative h-48 w-full bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl overflow-hidden mb-6">
+            <Image
+              src={imageUrl}
+              alt={nameGeneral}
+              fill
+              className="object-contain p-4"
+              unoptimized
+            />
+            <div className="absolute top-3 right-3">
+              <TrafficLightBadge level={toxicityLevel} />
+            </div>
+          </div>
+
+          <h2 className="text-2xl font-bold text-green-900 leading-tight">
+            {nameGeneral}
+          </h2>
+          {nameAlgerian && (
+            <p className="text-md font-medium text-[#E91E8C] mt-1">
+              Appellation algérienne: {nameAlgerian}
+            </p>
+          )}
+          {nameScientific && (
+            <p className="text-sm italic text-slate-500 mt-1 mb-4">
+              Nom scientifique: {nameScientific}
+            </p>
+          )}
+
+          <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-2">
+            <h4 className="font-semibold text-green-900 mb-2">Description & Informations</h4>
+            <p className="text-slate-700 leading-relaxed whitespace-pre-line">
+              {description || "Aucune description détaillée n'est disponible pour cette plante."}
+            </p>
+          </div>
+        </div>
+      </Modal>
+    </>
   );
 }
