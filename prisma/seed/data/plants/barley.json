@@ -1,0 +1,22 @@
+{
+  "nameEn": "Barley",
+  "nameFr": "Orge",
+  "nameAr": "شعير",
+  "nameScientific": "Hordeum vulgare",
+  "family": "Poaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "SAFE",
+  "description": "L'orge est une céréale nutritive, riche en fibres et en minéraux, considérée comme sûre et bénéfique pendant la grossesse.",
+  "pregnancySafetyNote": "",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Digestion",
+    "Énergie"
+  ],
+  "warnings": [],
+  "sources": []
+}

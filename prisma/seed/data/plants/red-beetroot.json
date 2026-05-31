@@ -1,0 +1,22 @@
+{
+  "nameEn": "Red Beetroot",
+  "nameFr": "Betterave rouge",
+  "nameAr": "شمندر أحمر",
+  "nameScientific": "Beta vulgaris",
+  "family": "Amaranthaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "SAFE",
+  "description": "La betterave rouge est un aliment nutritif, riche en fer et en acide folique, considéré comme sûr et bénéfique pendant la grossesse.",
+  "pregnancySafetyNote": "",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Anémie",
+    "Fatigue"
+  ],
+  "warnings": [],
+  "sources": []
+}

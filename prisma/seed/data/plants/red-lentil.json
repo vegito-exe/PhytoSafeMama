@@ -1,0 +1,23 @@
+{
+  "nameEn": "Red Lentil",
+  "nameFr": "Lentille rouge",
+  "nameAr": "عدس أحمر",
+  "nameScientific": "Lens culinaris",
+  "family": "Fabaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "SAFE",
+  "description": "Les lentilles rouges sont un aliment nutritif, riche en protéines, fer et acide folique, particulièrement bénéfique pendant la grossesse.",
+  "pregnancySafetyNote": "",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Anémie",
+    "Fatigue",
+    "Énergie"
+  ],
+  "warnings": [],
+  "sources": []
+}

@@ -1,0 +1,22 @@
+{
+  "nameEn": "Rosemary",
+  "nameFr": "Romarin",
+  "nameAr": "إكليل الجبل",
+  "nameScientific": "Rosmarinus officinalis",
+  "family": "Lamiaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "CAUTION",
+  "description": "Le romarin en quantités culinaires est généralement toléré. Cependant, l'huile essentielle et les doses thérapeutiques sont déconseillées pendant la grossesse en raison de propriétés emménagogues potentielles.",
+  "pregnancySafetyNote": "",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Digestion",
+    "Fatigue"
+  ],
+  "warnings": [],
+  "sources": []
+}

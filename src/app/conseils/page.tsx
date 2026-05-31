@@ -10,31 +10,14 @@ export default function ConseilsPage() {
   const [activeModal, setActiveModal] = useState<number | null>(null);
 
   return (
-    <div className="flex flex-col min-h-screen pt-24 pb-12">
-      {/* ─── Breadcrumb ─────────────────────────────────── */}
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8 mb-4">
-        <nav className="flex text-sm text-muted-foreground">
-          <ol className="flex items-center space-x-2">
-            <li>
-              <Link href="/" className="hover:text-green-900 transition-colors">
-                Accueil
-              </Link>
-            </li>
-            <li>
-              <ChevronRight className="h-4 w-4" />
-            </li>
-            <li className="font-semibold text-foreground">Grossesse & Conseils</li>
-          </ol>
-        </nav>
-      </div>
-
+    <div className="flex flex-col items-center min-h-screen pt-24 pb-12 ">
       {/* ─── Hero Section ─────────────────────────────────── */}
-      <section className="bg-[#FFF0F3] relative overflow-hidden mb-16 py-12 lg:py-0">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden mb-16 py-12 lg:py-0">
+        <div className="mx-auto w-[990px] ">
           <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:h-[400px]">
             {/* Text Content */}
             <div className="flex-1 text-center lg:text-left">
-              <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl mb-4">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl mb-4">
                 <span className="text-green-900">Grossesse & </span>
                 <span className="text-[#E91E8C]">Conseils</span>
               </h1>
@@ -46,30 +29,21 @@ export default function ConseilsPage() {
                 Des informations fiables et naturelles pour vous accompagner<br className="hidden lg:block"/> à chaque étape de votre grossesse.
               </p>
             </div>
-
-            {/* Image Placeholder */}
-            <div className="flex-1 relative h-64 lg:h-full w-full max-w-md lg:max-w-none">
-              <div className="absolute inset-0 bg-[#E91E8C]/10 rounded-[2rem] lg:rounded-none lg:rounded-l-[4rem] overflow-hidden flex items-center justify-center border-4 border-white/50 shadow-sm">
-                <div className="text-[#E91E8C]/50 flex flex-col items-center gap-2">
-                  <Heart className="h-12 w-12" />
-                  <span className="font-medium">Image: Médecin Grossesse</span>
-                </div>
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
 
       {/* ─── Info Card ─────────────────────────────────── */}
-      <section className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mb-20">
-        <div className="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(233,30,140,0.06)] border border-[#E91E8C]/10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+      <section className="mb-20 w-full">
+        <div className="bg-white rounded-2xl p-8 max-w-5xl mx-auto shadow-[0_8px_30px_rgb(233,30,140,0.06)] border border-[#E91E8C]/10 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
           
           {/* Subtle background element */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-[#E91E8C]/5 rounded-full blur-3xl pointer-events-none"></div>
 
           {/* Icon Left */}
-          <div className="flex-shrink-0 flex items-center justify-center h-20 w-20 rounded-full bg-[#FFF0F3] text-[#E91E8C]">
-            <Heart className="h-10 w-10 fill-current" />
+          <div className="flex-shrink-0 flex items-center justify-center h-40 w-40 rounded-full bg-[#FFF0F3] inset-shadow-sm text-[#E91E8C]">
+            <Image src="/definition/left-side.svg" alt="Grossesse logo" width={120} height={120} style={{ objectFit: 'contain' }} />
           </div>
 
           {/* Text Center */}
@@ -86,8 +60,8 @@ export default function ConseilsPage() {
           </div>
 
           {/* Icon Right */}
-          <div className="flex-shrink-0 border-2 border-green-700/20 p-4 rounded-xl text-green-800">
-            <Leaf className="h-12 w-12" strokeWidth={1.5} />
+          <div className="flex-shrink-0 p-4 ">
+            <Image src="/definition/right-side.svg" alt="Plante" width={200} height={2} style={{ objectFit: 'cover' }} />
           </div>
         </div>
       </section>
@@ -107,8 +81,8 @@ export default function ConseilsPage() {
             
             {/* Card 1 */}
             <div className="bg-white rounded-[20px] p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center relative hover:shadow-md transition-shadow">
-              <div className="h-14 w-14 rounded-full bg-[#E91E8C] text-white flex items-center justify-center text-xl font-bold mb-4 shadow-lg shadow-[#E91E8C]/20 border-4 border-white">
-                1
+              <div className="h-30 w-30 rounded-full  text-white flex items-center justify-center text-xl font-bold mb-4 shadow-lg shadow-[#E91E8C]/20 border-4 border-white">
+                <Image src="/les-etapes/part1.svg" alt="1er trimestre" width={120} height={120} style={{ objectFit: 'contain' }} />
               </div>
               <h3 className="text-2xl font-bold text-[#E91E8C] mb-1">1er trimestre</h3>
               <span className="text-sm font-medium text-[#E91E8C]/80 mb-6">(0 - 12 semaines)</span>
@@ -128,8 +102,8 @@ export default function ConseilsPage() {
 
             {/* Card 2 */}
             <div className="bg-white rounded-[20px] p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center relative hover:shadow-md transition-shadow">
-              <div className="h-14 w-14 rounded-full bg-green-600 text-white flex items-center justify-center text-xl font-bold mb-4 shadow-lg shadow-green-600/20 border-4 border-white">
-                2
+              <div className="h-30 w-30 rounded-full  text-white flex items-center justify-center text-xl font-bold mb-4 shadow-lg shadow-green-600/20 border-4 border-white">
+                <Image src="/les-etapes/part2.svg" alt="2ème trimestre" width={120} height={120} style={{ objectFit: 'contain' }} />
               </div>
               <h3 className="text-2xl font-bold text-green-700 mb-1">2ème trimestre</h3>
               <span className="text-sm font-medium text-green-700/80 mb-6">(13 - 26 semaines)</span>
@@ -149,8 +123,8 @@ export default function ConseilsPage() {
 
             {/* Card 3 */}
             <div className="bg-white rounded-[20px] p-6 shadow-sm border border-gray-100 flex flex-col items-center text-center relative hover:shadow-md transition-shadow">
-              <div className="h-14 w-14 rounded-full bg-[#E91E8C] text-white flex items-center justify-center text-xl font-bold mb-4 shadow-lg shadow-[#E91E8C]/20 border-4 border-white">
-                3
+              <div className="h-30 w-30 rounded-full  text-white flex items-center justify-center text-xl font-bold mb-4 shadow-lg shadow-[#E91E8C]/20 border-4 border-white">
+                <Image src="/les-etapes/part3.svg" alt="3ème trimestre" width={120} height={120} style={{ objectFit: 'contain' }} />
               </div>
               <h3 className="text-2xl font-bold text-[#E91E8C] mb-1">3ème trimestre</h3>
               <span className="text-sm font-medium text-[#E91E8C]/80 mb-6">(27 - 40 semaines)</span>
@@ -173,41 +147,60 @@ export default function ConseilsPage() {
       </section>
 
       {/* ─── Bottom Info Bar ─────────────────────────────────── */}
-      <section className="bg-slate-50 border-y border-slate-100 py-12 mt-auto">
+      <section className="bg-slate-50 rounded-2xl border-y border-slate-100 py-12 mt-auto">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            <div className="flex flex-col gap-3">
-              <ShieldCheck className="h-8 w-8 text-green-900" />
-              <h4 className="font-bold text-green-900 text-lg">Informations fiables</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Basées sur des données scientifiques et des sources de confiance.
-              </p>
+            <div className="flex flex-row gap-4">
+              <div className="flex-shrink-0">
+                <ShieldCheck className="w-12 h-12 text-green-900" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h4 className="font-bold text-green-900 text-lg">Informations fiables</h4>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Basées sur des données scientifiques et des sources de confiance.
+                </p>
+              </div>
+              <div className="h-full w-1 bg-black/20"></div>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <Leaf className="h-8 w-8 text-[#E91E8C]" />
-              <h4 className="font-bold text-[#E91E8C] text-lg">Conseils naturels</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Des recommandations à base de plantes adaptées à chaque étape.
-              </p>
+            <div className="flex flex-row gap-4">
+              <div className="flex-shrink-0">
+                <Leaf className="w-12 h-12 text-[#E91E8C]" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h4 className="font-bold text-[#E91E8C] text-lg">Conseils naturels</h4>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Des recommandations à base de plantes adaptées à chaque étape.
+                </p>
+              </div>
+              <div className="h-full w-1 bg-black/20"></div>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <Heart className="h-8 w-8 text-green-900" />
-              <h4 className="font-bold text-green-900 text-lg">Bien-être global</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Prenez soin de votre corps et de votre esprit pour une grossesse sereine.
-              </p>
+            <div className="flex flex-row gap-4">
+              <div className="flex-shrink-0">
+                <Heart className="w-12 h-12 text-green-900" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h4 className="font-bold text-green-900 text-lg">Bien-être global</h4>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Prenez soin de votre corps et de votre esprit pour une grossesse sereine.
+                </p>
+              </div>
+              <div className="h-full w-1 bg-black/20"></div>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <AlertTriangle className="h-8 w-8 text-[#E91E8C]" />
-              <h4 className="font-bold text-[#E91E8C] text-lg">Prudence d'abord</h4>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Certaines plantes sont à éviter. Informez-vous toujours avant
-                toute utilisation.
-              </p>
+            <div className="flex flex-row gap-4">
+              <div className="flex-shrink-0">
+                <AlertTriangle className="w-12 h-12 text-[#E91E8C]" strokeWidth={1.5} />
+              </div>
+              <div className="flex flex-col gap-2">
+                <h4 className="font-bold text-[#E91E8C] text-lg">Prudence d'abord</h4>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Certaines plantes sont à éviter. Informez-vous toujours avant
+                  toute utilisation.
+                </p>
+              </div>
             </div>
 
           </div>

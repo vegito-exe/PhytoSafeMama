@@ -1,0 +1,40 @@
+{
+  "nameEn": "Date Palm",
+  "nameFr": "Dattier",
+  "nameAr": "التمر",
+  "nameScientific": "Phoenix dactylifera",
+  "family": "Arecaceae",
+  "botanicalDescription": "Les feuilles sont pennées, longues et finement divisées. Les fruits appelés dattes sont des baies.",
+  "partUsed": "Le fruit",
+  "chemicalComposition": [
+    "Principalement des hydrates de carbone (saccharose)",
+    "Minéraux",
+    "Acides aminés",
+    "Vitamines"
+  ],
+  "therapeuticEffects": [
+    "Source énergétique importante",
+    "Effets antioxydants et hypocholestérolémiants",
+    "Prévention du diabète, des maladies cardiaques et de certaines infections"
+  ],
+  "toxicityLevel": "SAFE",
+  "description": "La consommation des dattes durant les 4 dernières semaines avant l'accouchement réduit significativement le besoin d'induction du travail. Source d'énergie majeure avec des effets antioxydants.",
+  "pregnancySafetyNote": "La consommation des dattes durant les 4 dernières semaines avant l'accouchement réduit significativement le besoin d'induction du travail.",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Fatigue",
+    "Énergie"
+  ],
+  "warnings": [],
+  "sources": [
+    {
+      "refId": 436,
+      "citation": "Vayalil PK. Date fruits (Phoenix dactylifera Linn): an emerging medicinal food. Critical reviews in food science and nutrition. 2012;52(3):249-71."
+    },
+    {
+      "refId": 437,
+      "citation": "Al-Kuran O, et al. The effect of late pregnancy consumption of date fruit on labour and delivery. Journal of obstetrics and gynaecology. 2011;31(1):29-31."
+    }
+  ]
+}

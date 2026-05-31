@@ -1,0 +1,28 @@
+{
+  "nameEn": "Fennel Seeds",
+  "nameFr": "Graines de fenouil",
+  "nameAr": "زريعة البسباس",
+  "nameScientific": "Foeniculum vulgare",
+  "family": "Apiaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "DANGER",
+  "description": "Les graines de fenouil contiennent de l'estragole, un composé potentiellement cancérigène et œstrogénique. L'huile essentielle est contre-indiquée pendant la grossesse.",
+  "pregnancySafetyNote": "L'huile essentielle est contre-indiquée pendant la grossesse en raison des effets œstrogéniques de l'estragole.",
+  "isAbortifacient": false,
+  "isUterotonic": true,
+  "symptomLinks": [
+    "Digestion",
+    "Ballonnements"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Œstrogénique",
+      "details": "Contient de l'estragole aux propriétés œstrogéniques et potentiellement cancérigènes. L'huile essentielle est contre-indiquée."
+    }
+  ],
+  "sources": []
+}

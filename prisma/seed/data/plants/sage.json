@@ -1,0 +1,38 @@
+{
+  "nameEn": "Sage",
+  "nameFr": "Sauge officinale",
+  "nameAr": "الميرامية",
+  "nameScientific": "Salvia officinalis",
+  "family": "Lamiaceae",
+  "botanicalDescription": "Plante aromatique vivace à feuilles gris-vert veloutées et fleurs violettes regroupées en épis.",
+  "partUsed": "Les feuilles et les parties aériennes",
+  "chemicalComposition": [
+    "Huile essentielle : thuyone, cinéole, camphre",
+    "Flavonoïdes",
+    "Tanins",
+    "Acides phénoliques"
+  ],
+  "therapeuticEffects": [
+    "Réduit le reflux gastro-œsophagien",
+    "Facilite la digestion",
+    "Peut faciliter l'accouchement",
+    "Antiseptique et anti-inflammatoire"
+  ],
+  "toxicityLevel": "CAUTION",
+  "description": "La sauge officinale contient de la thuyone, une substance neurotoxique. À utiliser avec prudence pendant la grossesse, surtout sous forme d'huile essentielle.",
+  "pregnancySafetyNote": "À utiliser avec prudence pendant la grossesse, surtout sous forme d'huile essentielle.",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Digestion",
+    "Reflux gastrique"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Neurotoxique",
+      "details": "Contient de la thuyone, substance neurotoxique. L'huile essentielle est à éviter pendant la grossesse."
+    }
+  ],
+  "sources": []
+}

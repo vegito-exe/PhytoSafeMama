@@ -1,0 +1,38 @@
+{
+  "nameEn": "Juniper",
+  "nameFr": "Genévrier",
+  "nameAr": "عرعار",
+  "nameScientific": "Juniperus phoenicea",
+  "family": "Cupressaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "DANGER",
+  "description": "Le genévrier est contre-indiqué pendant la grossesse en raison de ses propriétés abortives connues. Les baies et l'huile essentielle stimulent les contractions utérines.",
+  "pregnancySafetyNote": "Contre-indiqué pendant la grossesse en raison de propriétés abortives et utérotoniques connues.",
+  "isAbortifacient": true,
+  "isUterotonic": true,
+  "symptomLinks": [],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Abortif",
+      "details": "Les baies et l'huile essentielle de genévrier ont des effets abortifs et utérotoniques documentés."
+    }
+  ],
+  "sources": [
+    {
+      "refId": 19,
+      "citation": "Hammiche V, Merad R, Azzouz M. Plantes toxiques à usage médicinal du pourtour méditerranéen: Springer Paris; 2013."
+    },
+    {
+      "refId": 55,
+      "citation": "Bruneton J. Plantes toxiques: végétaux dangereux pour l'homme et les animaux. Paris: Tec Doc. 1996."
+    },
+    {
+      "refId": 315,
+      "citation": "Holst L, Wright D, Haavik S, Nordeng H. Safety and efficacy of herbal remedies in obstetrics—review and clinical implications. Midwifery. 2011;27(1):80-6."
+    }
+  ]
+}

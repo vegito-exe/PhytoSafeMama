@@ -1,0 +1,27 @@
+{
+  "nameEn": "Cumin",
+  "nameFr": "Cumin",
+  "nameAr": "كمون",
+  "nameScientific": "Cuminum cyminum",
+  "family": "Apiaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "SAFE",
+  "description": "Le cumin est utilisé comme épice culinaire et est généralement considéré comme sûr pendant la grossesse en quantités alimentaires normales. Il aide à la digestion et soulage les ballonnements.",
+  "pregnancySafetyNote": "",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Digestion",
+    "Ballonnements"
+  ],
+  "warnings": [],
+  "sources": [
+    {
+      "refId": 365,
+      "citation": "Le cumin et ses bienfaits pour la digestion. Available from: https://www.passeportsante.net/fr/Nutrition/EncyclopedieAliments/Fiche.aspx?doc=cumin_nu"
+    }
+  ]
+}

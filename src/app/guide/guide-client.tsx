@@ -10,11 +10,19 @@ import { Leaf } from "lucide-react";
 
 interface PlantData {
   id: string;
-  nameGeneral: string;
-  nameAlgerian: string;
+  nameFr: string;
+  nameAr: string;
+  nameEn: string;
   nameScientific: string;
+  family: string;
   toxicityLevel: ToxicityLevel;
   description: string;
+  partUsed: string;
+  chemicalComposition: string[];
+  therapeuticEffects: string[];
+  pregnancySafetyNote: string;
+  isAbortifacient: boolean;
+  isUterotonic: boolean;
   symptomNames: string[];
 }
 
@@ -33,9 +41,11 @@ export function GuideClient({ plants, symptoms }: GuideClientProps) {
       if (searchQuery) {
         const q = searchQuery.toLowerCase();
         const matchesSearch =
-          plant.nameGeneral.toLowerCase().includes(q) ||
-          plant.nameAlgerian.toLowerCase().includes(q) ||
-          plant.nameScientific.toLowerCase().includes(q);
+          plant.nameFr.toLowerCase().includes(q) ||
+          plant.nameAr.toLowerCase().includes(q) ||
+          plant.nameEn.toLowerCase().includes(q) ||
+          plant.nameScientific.toLowerCase().includes(q) ||
+          plant.family.toLowerCase().includes(q);
         if (!matchesSearch) return false;
       }
       // Symptom filter
@@ -54,7 +64,7 @@ export function GuideClient({ plants, symptoms }: GuideClientProps) {
           Le Guide des Plantes
         </h1>
         <p className="mt-2 text-muted-foreground">
-          Recherchez une plante par son nom français, algérien ou scientifique.
+          Recherchez une plante par son nom français, arabe, anglais ou scientifique.
         </p>
       </div>
 
@@ -81,11 +91,19 @@ export function GuideClient({ plants, symptoms }: GuideClientProps) {
         {filteredPlants.map((plant) => (
           <PlantCard
             key={plant.id}
-            nameGeneral={plant.nameGeneral}
-            nameAlgerian={plant.nameAlgerian}
+            nameFr={plant.nameFr}
+            nameAr={plant.nameAr}
+            nameEn={plant.nameEn}
             nameScientific={plant.nameScientific}
+            family={plant.family}
             toxicityLevel={plant.toxicityLevel}
             description={plant.description}
+            partUsed={plant.partUsed}
+            chemicalComposition={plant.chemicalComposition}
+            therapeuticEffects={plant.therapeuticEffects}
+            pregnancySafetyNote={plant.pregnancySafetyNote}
+            isAbortifacient={plant.isAbortifacient}
+            isUterotonic={plant.isUterotonic}
           />
         ))}
       </div>

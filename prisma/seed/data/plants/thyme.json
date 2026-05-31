@@ -1,0 +1,28 @@
+{
+  "nameEn": "Thyme",
+  "nameFr": "Thym",
+  "nameAr": "زعتر",
+  "nameScientific": "Thymus vulgaris",
+  "family": "Lamiaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "SAFE",
+  "description": "Le thym en infusion légère est considéré comme sûr pendant la grossesse. Ses propriétés antiseptiques sont utiles contre les infections respiratoires.",
+  "pregnancySafetyNote": "",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Toux",
+    "Immunité",
+    "Digestion"
+  ],
+  "warnings": [],
+  "sources": [
+    {
+      "refId": 417,
+      "citation": "Thym - Bienfaits pour la santé. Available from: https://sante-medecine.journaldesfemmes.fr/contents/2506-thym-bienfaits-pour-la-sante"
+    }
+  ]
+}

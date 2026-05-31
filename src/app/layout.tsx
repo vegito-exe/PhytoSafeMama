@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "PhytoGrossesse Algérie — Plantes Médicinales & Grossesse",
+  title: "PhytoSafe_Mama",
   description:
     "Vérifiez la sécurité des plantes médicinales pendant la grossesse. Guide complet avec données scientifiques issues de thèses universitaires algériennes.",
   keywords: [

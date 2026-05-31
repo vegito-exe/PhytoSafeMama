@@ -1,0 +1,43 @@
+{
+  "nameEn": "Chamomile",
+  "nameFr": "Camomille",
+  "nameAr": "البابونج",
+  "nameScientific": "Matricaria chamomilla",
+  "family": "Asteraceae",
+  "botanicalDescription": "Plante herbacée annuelle commune en Europe, surtout en Hongrie et dans les Balkans. Elle possède des feuilles portées par une tige ramifiée. Les inflorescences en capitules ont un réceptacle conique creux, avec des fleurs ligulées blanches et des fleurs tubuleuses jaunes au centre.",
+  "partUsed": "Les capitules floraux",
+  "chemicalComposition": [
+    "Mucilage galacturonique",
+    "Coumarines",
+    "Flavonoïdes",
+    "Glucosides du lutéolol et hétérosides du quercétol et de l'isorhamnétol"
+  ],
+  "therapeuticEffects": [
+    "Anti-inflammatoire",
+    "Désinfectante",
+    "Sédative légère",
+    "Antispasmodique",
+    "Facilite la digestion et soulage les ballonnements",
+    "Antibactérienne, antifongique et hypotensive"
+  ],
+  "toxicityLevel": "CAUTION",
+  "description": "La camomille est généralement bien tolérée en infusion légère, mais une consommation excessive est déconseillée, surtout durant les trois premiers mois de grossesse.",
+  "pregnancySafetyNote": "Déconseillée à doses excessives et durant les trois premiers mois de grossesse.",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Stress",
+    "Insomnie",
+    "Digestion",
+    "Douleurs",
+    "Ballonnements"
+  ],
+  "warnings": [
+    {
+      "trimester": 1,
+      "warningType": "Risque dose-dépendant",
+      "details": "Doses excessives durant le premier trimestre peuvent stimuler les contractions utérines."
+    }
+  ],
+  "sources": []
+}

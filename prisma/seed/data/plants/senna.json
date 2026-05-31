@@ -1,0 +1,49 @@
+{
+  "nameEn": "Senna",
+  "nameFr": "Séné",
+  "nameAr": "سنا مكي",
+  "nameScientific": "Cassia angustifolia",
+  "family": "Caesalpiniaceae",
+  "botanicalDescription": "Sous-arbrisseau originaire des régions désertiques. Les feuilles sont composées paripennées. Les fleurs jaunes veinées de brun sont zygomorphes. Le fruit est une gousse aplatie contenant 6 à 8 graines.",
+  "partUsed": "Les folioles et le fruit",
+  "chemicalComposition": [
+    "Flavonoïdes",
+    "Pinnitol",
+    "Polysaccharides acides",
+    "Matières minérales",
+    "Dérivés naphtaléniques",
+    "Sennosides et anthraquinones"
+  ],
+  "therapeuticEffects": [
+    "Laxatif stimulant le péristaltisme intestinal",
+    "Utilisé contre la constipation occasionnelle",
+    "Peut provoquer des crampes gastro-intestinales",
+    "Risque d'hypokaliémie en cas d'utilisation prolongée"
+  ],
+  "toxicityLevel": "DANGER",
+  "description": "Par précaution, son utilisation est déconseillée pendant la grossesse et l'allaitement en raison du possible passage des dérivés anthraquinoniques à travers le placenta et dans le lait maternel.",
+  "pregnancySafetyNote": "Déconseillé pendant la grossesse et l'allaitement en raison du possible passage des dérivés anthraquinoniques à travers le placenta et dans le lait maternel.",
+  "isAbortifacient": false,
+  "isUterotonic": true,
+  "symptomLinks": [
+    "Constipation"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Transfert placentaire",
+      "details": "Les dérivés anthraquinoniques (sennosides) peuvent traverser le placenta et passer dans le lait maternel."
+    },
+    {
+      "trimester": 0,
+      "warningType": "Utérotonique",
+      "details": "L'action laxative stimulante peut déclencher des contractions utérines par stimulation intestinale."
+    }
+  ],
+  "sources": [
+    {
+      "refId": 413,
+      "citation": "Séné (feuille de séné et fruit de séné). Available from: https://www.creapharma.ch/sene.htm"
+    }
+  ]
+}

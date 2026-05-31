@@ -1,0 +1,60 @@
+{
+  "nameEn": "Ginger",
+  "nameFr": "Gingembre",
+  "nameAr": "زنجبيل",
+  "nameScientific": "Zingiber officinale",
+  "family": "Zingiberaceae",
+  "botanicalDescription": "Grande plante herbacée vivace à feuilles lancéolées et inflorescence dense avec des bractées. Les fleurs sont vert pâle avec un labelle pourpre.",
+  "partUsed": "Le rhizome",
+  "chemicalComposition": [
+    "Glucides : amidon (jusqu'à 50 %)",
+    "Lipides (6–8 %) : acides gras libres et triglycérides",
+    "Oléo-résine : gingérols et shogaols",
+    "Flavonoïdes : quercétine, rutine, fisétine, morine, acides gallique, férulique et vanillique"
+  ],
+  "therapeuticEffects": [
+    "Antiémétique",
+    "Antimicrobien",
+    "Antioxydant",
+    "Anti-inflammatoire",
+    "Anticancéreux",
+    "Hypoglycémiant",
+    "Cholagogue et stomachique",
+    "Inhibition de l'agrégation plaquettaire"
+  ],
+  "toxicityLevel": "CAUTION",
+  "description": "Le gingembre est très efficace contre les nausées matinales, mais les doses dépassant les quantités alimentaires habituelles sont déconseillées pendant la grossesse et l'allaitement.",
+  "pregnancySafetyNote": "Les doses dépassant les quantités alimentaires sont déconseillées pendant la grossesse et l'allaitement.",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Nausées",
+    "Digestion",
+    "Ballonnements"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Dose maximale",
+      "details": "Ne pas dépasser 1 g de poudre séchée par jour. Les doses supérieures n'ont pas été suffisamment étudiées pour la sécurité durant la grossesse."
+    }
+  ],
+  "sources": [
+    {
+      "refId": 255,
+      "citation": "Vutyavanich T, et al. Ginger for nausea and vomiting in pregnancy: randomized, double-masked, placebo-controlled trial. Obstetrics & Gynecology. 2001;97(4):577-82."
+    },
+    {
+      "refId": 258,
+      "citation": "Borrelli F, et al. Effectiveness and safety of ginger in the treatment of pregnancy-induced nausea and vomiting. Obstetrics & gynecology. 2005;105(4):849-56."
+    },
+    {
+      "refId": 264,
+      "citation": "Viljoen E, et al. A systematic review and meta-analysis of the effect and safety of ginger in the treatment of pregnancy-associated nausea and vomiting. Nutrition journal. 2014;13(1):20."
+    },
+    {
+      "refId": 319,
+      "citation": "Wilkinson JM. Effect of ginger tea on the fetal development of Sprague-Dawley rats. Reproductive Toxicology. 2000;14(6):507-12."
+    }
+  ]
+}

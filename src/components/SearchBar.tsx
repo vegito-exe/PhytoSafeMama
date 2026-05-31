@@ -11,7 +11,7 @@ interface SearchBarProps {
 }
 
 export function SearchBar({
-  placeholder = "Rechercher une plante (nom français, algérien ou scientifique)…",
+  placeholder = "Rechercher une plante (français, arabe, anglais ou scientifique)…",
   onSearch,
   className,
 }: SearchBarProps) {

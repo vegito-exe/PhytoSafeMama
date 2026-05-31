@@ -1,0 +1,35 @@
+{
+  "nameEn": "Vervain",
+  "nameFr": "Verveine",
+  "nameAr": "اللويزة",
+  "nameScientific": "Verbena officinalis",
+  "family": "Verbenaceae",
+  "botanicalDescription": "Plante vivace de 40 à 80 cm. Les feuilles inférieures sont pétiolées, ovales ou oblongues, dentées ou pennatifides. Les fleurs sont petites, bleuâtres et sessiles.",
+  "partUsed": "Parties aériennes récoltées pendant la floraison",
+  "chemicalComposition": [
+    "Iridoïdes : verbenaline, verbenine, hastatoside",
+    "Polyphénols : verbascoside, aucubine, lutéoline 7-diglucuronide"
+  ],
+  "therapeuticEffects": [
+    "Expectorant",
+    "Antitussif",
+    "Anti-inflammatoire",
+    "Anti-gastritique"
+  ],
+  "toxicityLevel": "DANGER",
+  "description": "La verveine peut stimuler l'utérus et présenter un effet abortif. Elle est déconseillée pendant la grossesse.",
+  "pregnancySafetyNote": "La verveine peut stimuler l'utérus et présenter un effet abortif. Déconseillée pendant la grossesse.",
+  "isAbortifacient": true,
+  "isUterotonic": true,
+  "symptomLinks": [
+    "Toux"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Abortif",
+      "details": "La verveine peut stimuler l'utérus et présenter un effet abortif."
+    }
+  ],
+  "sources": []
+}

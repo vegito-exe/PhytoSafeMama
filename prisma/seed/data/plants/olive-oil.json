@@ -1,0 +1,30 @@
+{
+  "nameEn": "Olive Oil",
+  "nameFr": "Huile d'olive",
+  "nameAr": "الزيتون",
+  "nameScientific": "Olea europaea",
+  "family": "Oleaceae",
+  "botanicalDescription": "L'olivier est un arbre ou un arbuste à feuilles persistantes et ramifiées, atteignant selon la variété une hauteur de 10 à 20 mètres. Les feuilles simples, épaisses et coriaces sont lancéolées à obovales. Le fruit, appelé olive, est une drupe.",
+  "partUsed": "Les fruits servant à obtenir l'huile d'olive",
+  "chemicalComposition": [
+    "Eau : 40–45 %",
+    "Glucides : 10–20 %",
+    "Lipides : 30 % du fruit mûr"
+  ],
+  "therapeuticEffects": [
+    "Réduit le risque de reflux gastro-œsophagien",
+    "Donne une sensation de satiété",
+    "Favorise la digestion"
+  ],
+  "toxicityLevel": "SAFE",
+  "description": "L'huile d'olive est très bénéfique et sûre pendant la grossesse. Elle réduit le risque de reflux gastro-œsophagien, donne une sensation de satiété et favorise la digestion.",
+  "pregnancySafetyNote": "Bénéfique pendant la grossesse.",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Digestion",
+    "Reflux gastrique"
+  ],
+  "warnings": [],
+  "sources": []
+}

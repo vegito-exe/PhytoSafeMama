@@ -8,8 +8,8 @@ import type { ToxicityLevel } from "@/types";
 
 interface PlantData {
   id: string;
-  nameGeneral: string;
-  nameAlgerian: string;
+  nameFr: string;
+  nameAr: string;
   nameScientific: string;
   toxicityLevel: ToxicityLevel;
   description: string;
@@ -77,9 +77,11 @@ export function SymptomsClient({ symptoms }: SymptomsClientProps) {
             {activeSymptom.plants.map((plant) => (
               <PlantCard
                 key={plant.id}
-                nameGeneral={plant.nameGeneral}
-                nameAlgerian={plant.nameAlgerian}
+                nameFr={plant.nameFr}
+                nameAr={plant.nameAr}
+                nameEn=""
                 nameScientific={plant.nameScientific}
+                family=""
                 toxicityLevel={plant.toxicityLevel}
                 description={plant.description}
               />

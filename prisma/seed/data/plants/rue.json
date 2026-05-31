@@ -1,0 +1,49 @@
+{
+  "nameEn": "Rue",
+  "nameFr": "Rue",
+  "nameAr": "الفيجل",
+  "nameScientific": "Ruta graveolens",
+  "family": "Rutaceae",
+  "botanicalDescription": "Plante vivace aromatique à feuilles bleu-vert très découpées et fleurs jaunes regroupées en petites grappes.",
+  "partUsed": "Les parties aériennes",
+  "chemicalComposition": [
+    "Huile essentielle",
+    "Flavonoïdes",
+    "Alcaloïdes",
+    "Furocoumarines"
+  ],
+  "therapeuticEffects": [
+    "Antispasmodique",
+    "Digestive",
+    "Stimule les menstruations",
+    "Utilisée traditionnellement contre les douleurs rhumatismales"
+  ],
+  "toxicityLevel": "DANGER",
+  "description": "La rue est contre-indiquée pendant la grossesse en raison de son effet abortif et stimulant utérin bien documenté. Les furocoumarines qu'elle contient sont également phototoxiques.",
+  "pregnancySafetyNote": "Contre-indiquée pendant la grossesse en raison de son effet abortif et stimulant utérin.",
+  "isAbortifacient": true,
+  "isUterotonic": true,
+  "symptomLinks": [],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Abortif",
+      "details": "Effet abortif et stimulant utérin bien documenté. Contre-indiquée à tout stade de la grossesse."
+    },
+    {
+      "trimester": 0,
+      "warningType": "Phototoxique",
+      "details": "Les furocoumarines sont phototoxiques et peuvent causer des brûlures cutanées."
+    }
+  ],
+  "sources": [
+    {
+      "refId": 19,
+      "citation": "Hammiche V, Merad R, Azzouz M. Plantes toxiques à usage médicinal du pourtour méditerranéen: Springer Paris; 2013."
+    },
+    {
+      "refId": 55,
+      "citation": "Bruneton J. Plantes toxiques: végétaux dangereux pour l'homme et les animaux. Paris: Tec Doc. 1996."
+    }
+  ]
+}

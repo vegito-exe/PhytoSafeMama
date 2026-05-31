@@ -1,0 +1,22 @@
+{
+  "nameEn": "Spearmint",
+  "nameFr": "Menthe",
+  "nameAr": "نعناع",
+  "nameScientific": "Mentha spicata",
+  "family": "Lamiaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "SAFE",
+  "description": "La menthe verte en infusion légère est considérée comme sûre pendant la grossesse. Elle aide à soulager les nausées et favorise la digestion.",
+  "pregnancySafetyNote": "",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Nausées",
+    "Digestion"
+  ],
+  "warnings": [],
+  "sources": []
+}

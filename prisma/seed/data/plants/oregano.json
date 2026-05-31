@@ -1,0 +1,40 @@
+{
+  "nameEn": "Oregano",
+  "nameFr": "Origan",
+  "nameAr": "زعتر بري",
+  "nameScientific": "Origanum vulgare",
+  "family": "Lamiaceae",
+  "botanicalDescription": "Plante herbacée vivace atteignant environ 80 cm, avec des tiges carrées rouges, des feuilles elliptiques et des grappes de fleurs roses profondes.",
+  "partUsed": "Parties aériennes et huile essentielle",
+  "chemicalComposition": [
+    "Huile volatile : carvacrol, thymol, bêta-bisabolène, caryophyllène, linalol, bornéol",
+    "Tanins",
+    "Résine",
+    "Stérols",
+    "Flavonoïdes"
+  ],
+  "therapeuticEffects": [
+    "Antiseptique puissant",
+    "Activité contre bactéries et champignons (E. coli, Candida)",
+    "Utilisé dans les infections digestives et respiratoires",
+    "Soulage les maux de dents et douleurs articulaires"
+  ],
+  "toxicityLevel": "CAUTION",
+  "description": "L'origan ne doit pas être utilisé comme médicament durant la grossesse. L'huile essentielle est déconseillée par voie interne. En quantités culinaires, il est généralement toléré.",
+  "pregnancySafetyNote": "Ne pas utiliser comme médicament durant la grossesse. L'huile essentielle est déconseillée par voie interne.",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Immunité",
+    "Digestion",
+    "Douleurs"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Huile essentielle contre-indiquée",
+      "details": "L'huile essentielle d'origan est déconseillée par voie interne durant la grossesse."
+    }
+  ],
+  "sources": []
+}

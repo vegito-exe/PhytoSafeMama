@@ -1,0 +1,52 @@
+{
+  "nameEn": "Pennyroyal Mint",
+  "nameFr": "Menthe pouliot",
+  "nameAr": "فليو",
+  "nameScientific": "Mentha pulegium",
+  "family": "Lamiaceae",
+  "botanicalDescription": "Buisson vivace aromatique atteignant 40 cm de hauteur, avec des feuilles ovales dentées et des fleurs lilas.",
+  "partUsed": "Parties aériennes et huile essentielle",
+  "chemicalComposition": [
+    "Huiles volatiles : pulégone, alpha-pinène, bêta-pinène, limonène, menthone, pipériténone",
+    "Tanins",
+    "Paraffines"
+  ],
+  "therapeuticEffects": [
+    "Tonique digestif",
+    "Soulage les flatulences et coliques",
+    "Utilisé contre les vers intestinaux",
+    "Réduit la fièvre et le mucus",
+    "Stimule les muscles utérins et favorise les menstruations",
+    "Utilisé contre les douleurs rhumatismales et la goutte"
+  ],
+  "toxicityLevel": "DANGER",
+  "description": "La menthe pouliot possède une longue tradition d'utilisation comme abortif. La pulégone qu'elle contient est hépatotoxique et stimule les muscles utérins. Strictement contre-indiquée pendant la grossesse.",
+  "pregnancySafetyNote": "Possède une longue tradition d'utilisation comme abortif. Strictement contre-indiquée pendant la grossesse.",
+  "isAbortifacient": true,
+  "isUterotonic": true,
+  "symptomLinks": [
+    "Digestion"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Abortif",
+      "details": "Longue tradition d'utilisation comme abortif. La pulégone stimule les muscles utérins."
+    },
+    {
+      "trimester": 0,
+      "warningType": "Hépatotoxique",
+      "details": "La pulégone est hépatotoxique et peut causer des lésions hépatiques graves."
+    }
+  ],
+  "sources": [
+    {
+      "refId": 19,
+      "citation": "Hammiche V, Merad R, Azzouz M. Plantes toxiques à usage médicinal du pourtour méditerranéen: Springer Paris; 2013."
+    },
+    {
+      "refId": 55,
+      "citation": "Bruneton J. Plantes toxiques: végétaux dangereux pour l'homme et les animaux. Paris: Tec Doc. 1996."
+    }
+  ]
+}

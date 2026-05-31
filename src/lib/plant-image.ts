@@ -7,7 +7,7 @@ const SUPABASE_BUCKET_URL =
 
 export const PLANT_FALLBACK_IMAGE = "/plant-fallback.svg";
 
-export function getPlantImageUrl(nameGeneral: string): string {
+export function getPlantImageUrl(nameGeneral: string, ext: "webp" | "jpg" = "webp"): string {
   const slug = nameGeneral
     .toLowerCase()
     .normalize("NFD")
@@ -17,5 +17,5 @@ export function getPlantImageUrl(nameGeneral: string): string {
     .replace(/-+/g, "-")
     .replace(/^-|-$/g, "");
 
-  return `${SUPABASE_BUCKET_URL}${slug}.webp`;
+  return `${SUPABASE_BUCKET_URL}${slug}.${ext}`;
 }

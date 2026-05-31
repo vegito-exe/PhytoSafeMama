@@ -9,33 +9,53 @@ export const metadata = {
 
 const FALLBACK_SYMPTOMS = [
   { id: "s1", name: "Nausées", plants: [
-    { id: "1", nameGeneral: "Gingembre", nameAlgerian: "Skenjbir", nameScientific: "Zingiber officinale", toxicityLevel: "SAFE" as ToxicityLevel, description: "Sûr pour soulager les nausées matinales." },
-    { id: "4", nameGeneral: "Menthe poivrée", nameAlgerian: "Naânaâ el-har", nameScientific: "Mentha × piperita", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Acceptable en petites quantités." },
+    { id: "18", nameFr: "Gingembre", nameAr: "زنجبيل", nameScientific: "Zingiber officinale", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Très efficace contre les nausées matinales, mais ne pas dépasser les doses alimentaires." },
+    { id: "8", nameFr: "Menthe", nameAr: "نعناع", nameScientific: "Mentha spicata", toxicityLevel: "SAFE" as ToxicityLevel, description: "Sûre en infusion légère pour soulager les nausées." },
   ]},
-  { id: "s2", name: "Stress", plants: [
-    { id: "3", nameGeneral: "Camomille", nameAlgerian: "Baboundj", nameScientific: "Matricaria chamomilla", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Bien tolérée en infusion légère." },
-    { id: "7", nameGeneral: "Verveine", nameAlgerian: "Louiza", nameScientific: "Aloysia citrodora", toxicityLevel: "SAFE" as ToxicityLevel, description: "Aide à la relaxation." },
-    { id: "11", nameGeneral: "Tilleul", nameAlgerian: "Zizfoun", nameScientific: "Tilia cordata", toxicityLevel: "SAFE" as ToxicityLevel, description: "Propriétés calmantes et sédatives." },
+  { id: "s2", name: "Digestion", plants: [
+    { id: "26", nameFr: "Huile d'olive", nameAr: "زيت الزيتون", nameScientific: "Olea europaea", toxicityLevel: "SAFE" as ToxicityLevel, description: "Réduit le reflux et favorise la digestion." },
+    { id: "9", nameFr: "Thym", nameAr: "زعتر", nameScientific: "Thymus vulgaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Sûr en infusion légère, aide à la digestion." },
+    { id: "4", nameFr: "Cumin", nameAr: "كمون", nameScientific: "Cuminum cyminum", toxicityLevel: "SAFE" as ToxicityLevel, description: "Sûr en quantités culinaires, soulage les ballonnements." },
+    { id: "3", nameFr: "Anis vert", nameAr: "حبة حلاوة", nameScientific: "Pimpinella anisum", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Infusion courte durée OK. Huile essentielle contre-indiquée." },
   ]},
-  { id: "s3", name: "Insomnie", plants: [
-    { id: "3", nameGeneral: "Camomille", nameAlgerian: "Baboundj", nameScientific: "Matricaria chamomilla", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Aide au sommeil en infusion légère." },
-    { id: "7", nameGeneral: "Verveine", nameAlgerian: "Louiza", nameScientific: "Aloysia citrodora", toxicityLevel: "SAFE" as ToxicityLevel, description: "Favorise la relaxation." },
-    { id: "11", nameGeneral: "Tilleul", nameAlgerian: "Zizfoun", nameScientific: "Tilia cordata", toxicityLevel: "SAFE" as ToxicityLevel, description: "Sédatif léger naturel." },
+  { id: "s3", name: "Stress", plants: [
+    { id: "10", nameFr: "Camomille", nameAr: "بابونج", nameScientific: "Matricaria chamomilla", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Bien tolérée en infusion légère, éviter les excès au 1er trimestre." },
+    { id: "23", nameFr: "Lavande", nameAr: "خزامى", nameScientific: "Lavandula angustifolia", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Infusion légère tolérée. Huile essentielle déconseillée." },
   ]},
-  { id: "s4", name: "Digestion", plants: [
-    { id: "1", nameGeneral: "Gingembre", nameAlgerian: "Skenjbir", nameScientific: "Zingiber officinale", toxicityLevel: "SAFE" as ToxicityLevel, description: "Aide digestive éprouvée." },
-    { id: "6", nameGeneral: "Thym", nameAlgerian: "Zaâtar", nameScientific: "Thymus vulgaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Sûr en infusion légère." },
-    { id: "12", nameGeneral: "Cumin", nameAlgerian: "Kamoun", nameScientific: "Cuminum cyminum", toxicityLevel: "SAFE" as ToxicityLevel, description: "Sûr en quantités culinaires." },
+  { id: "s4", name: "Insomnie", plants: [
+    { id: "10", nameFr: "Camomille", nameAr: "بابونج", nameScientific: "Matricaria chamomilla", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Propriétés sédatives en infusion légère." },
+    { id: "23", nameFr: "Lavande", nameAr: "خزامى", nameScientific: "Lavandula angustifolia", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Favorise la relaxation et le sommeil." },
   ]},
   { id: "s5", name: "Fatigue", plants: [
-    { id: "8", nameGeneral: "Nigelle", nameAlgerian: "Habbat el-baraka", nameScientific: "Nigella sativa", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Prudence, effet utérotonique à forte dose." },
+    { id: "16", nameFr: "Dattier", nameAr: "تمر", nameScientific: "Phoenix dactylifera", toxicityLevel: "SAFE" as ToxicityLevel, description: "Source d'énergie majeure, riche en glucides et minéraux." },
+    { id: "15", nameFr: "Lentille rouge", nameAr: "عدس أحمر", nameScientific: "Lens culinaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Riche en fer et acide folique." },
+    { id: "7", nameFr: "Betterave rouge", nameAr: "شمندر أحمر", nameScientific: "Beta vulgaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Riche en fer, bénéfique contre la fatigue." },
   ]},
   { id: "s6", name: "Immunité", plants: [
-    { id: "6", nameGeneral: "Thym", nameAlgerian: "Zaâtar", nameScientific: "Thymus vulgaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Propriétés antiseptiques." },
-    { id: "8", nameGeneral: "Nigelle", nameAlgerian: "Habbat el-baraka", nameScientific: "Nigella sativa", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Immunostimulant, mais prudence." },
+    { id: "9", nameFr: "Thym", nameAr: "زعتر", nameScientific: "Thymus vulgaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Propriétés antiseptiques respiratoires." },
+    { id: "11", nameFr: "Ail", nameAr: "ثوم", nameScientific: "Allium sativum", toxicityLevel: "SAFE" as ToxicityLevel, description: "Réduit le risque d'accouchement prématuré." },
+    { id: "27", nameFr: "Oignon", nameAr: "بصل", nameScientific: "Allium cepa", toxicityLevel: "SAFE" as ToxicityLevel, description: "Propriétés anti-inflammatoires et antioxydantes." },
+    { id: "30", nameFr: "Origan", nameAr: "زعتر بري", nameScientific: "Origanum vulgare", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Antiseptique puissant. Ne pas utiliser comme médicament pendant la grossesse." },
   ]},
   { id: "s7", name: "Toux", plants: [
-    { id: "6", nameGeneral: "Thym", nameAlgerian: "Zaâtar", nameScientific: "Thymus vulgaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Antiseptique respiratoire." },
+    { id: "9", nameFr: "Thym", nameAr: "زعتر", nameScientific: "Thymus vulgaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Antiseptique respiratoire, sûr en infusion." },
+    { id: "32", nameFr: "Verveine", nameAr: "اللويزة", nameScientific: "Verbena officinalis", toxicityLevel: "DANGER" as ToxicityLevel, description: "⚠️ Antitussif mais abortif — contre-indiquée pendant la grossesse." },
+  ]},
+  { id: "s8", name: "Constipation", plants: [
+    { id: "12", nameFr: "Lin", nameAr: "بذور الكتان", nameScientific: "Linum usitatissimum", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Prudence en raison des phytoestrogènes." },
+    { id: "13", nameFr: "Séné", nameAr: "سنا مكي", nameScientific: "Cassia angustifolia", toxicityLevel: "DANGER" as ToxicityLevel, description: "⚠️ Contre-indiqué : passage des anthraquinones à travers le placenta." },
+  ]},
+  { id: "s9", name: "Anémie", plants: [
+    { id: "7", nameFr: "Betterave rouge", nameAr: "شمندر أحمر", nameScientific: "Beta vulgaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Riche en fer et acide folique." },
+    { id: "15", nameFr: "Lentille rouge", nameAr: "عدس أحمر", nameScientific: "Lens culinaris", toxicityLevel: "SAFE" as ToxicityLevel, description: "Excellente source de fer végétal." },
+  ]},
+  { id: "s10", name: "Ballonnements", plants: [
+    { id: "4", nameFr: "Cumin", nameAr: "كمون", nameScientific: "Cuminum cyminum", toxicityLevel: "SAFE" as ToxicityLevel, description: "Sûr en quantités culinaires." },
+    { id: "18", nameFr: "Gingembre", nameAr: "زنجبيل", nameScientific: "Zingiber officinale", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Aide digestive, respecter les doses alimentaires." },
+    { id: "3", nameFr: "Anis vert", nameAr: "حبة حلاوة", nameScientific: "Pimpinella anisum", toxicityLevel: "CAUTION" as ToxicityLevel, description: "Infusion courte durée uniquement." },
+  ]},
+  { id: "s11", name: "Douleurs", plants: [
+    { id: "33", nameFr: "Giroflier", nameAr: "قرنفل", nameScientific: "Caryophyllus aromaticus", toxicityLevel: "DANGER" as ToxicityLevel, description: "⚠️ Antalgique dentaire mais utérotonique — contre-indiqué pendant la grossesse." },
   ]},
 ];
 
@@ -55,8 +75,8 @@ export default async function SymptomsPage() {
         name: s.name,
         plants: s.plants.map((ps) => ({
           id: ps.plant.id,
-          nameGeneral: ps.plant.nameGeneral,
-          nameAlgerian: ps.plant.nameAlgerian,
+          nameFr: ps.plant.nameFr,
+          nameAr: ps.plant.nameAr,
           nameScientific: ps.plant.nameScientific,
           toxicityLevel: ps.plant.toxicityLevel,
           description: ps.plant.description,

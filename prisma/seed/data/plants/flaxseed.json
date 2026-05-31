@@ -1,0 +1,22 @@
+{
+  "nameEn": "Flaxseed",
+  "nameFr": "Lin",
+  "nameAr": "بذور الكتان",
+  "nameScientific": "Linum usitatissimum",
+  "family": "Linaceae",
+  "botanicalDescription": "",
+  "partUsed": "",
+  "chemicalComposition": [],
+  "therapeuticEffects": [],
+  "toxicityLevel": "CAUTION",
+  "description": "Les graines de lin contiennent des phytoestrogènes (lignanes) qui nécessitent une prudence d'utilisation pendant la grossesse. La consommation en quantités alimentaires modérées est généralement tolérée.",
+  "pregnancySafetyNote": "",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Constipation",
+    "Digestion"
+  ],
+  "warnings": [],
+  "sources": []
+}

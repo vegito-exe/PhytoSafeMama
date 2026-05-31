@@ -1,0 +1,38 @@
+{
+  "nameEn": "Saffron",
+  "nameFr": "Safran",
+  "nameAr": "زعفران",
+  "nameScientific": "Crocus sativa",
+  "family": "Iridaceae",
+  "botanicalDescription": "Plante herbacée médicinale très précieuse. Les stigmates sont fins et de couleur orange foncé.",
+  "partUsed": "Le stigmate",
+  "chemicalComposition": [
+    "Crocines (glucosides caroténoïdes)",
+    "Huile volatile (safranal)",
+    "Substances amères"
+  ],
+  "therapeuticEffects": [
+    "Neuroprotecteur",
+    "Antidépresseur",
+    "Antispasmodique",
+    "Renforce la vue",
+    "Tonique cardiaque",
+    "Réduit l'appétit"
+  ],
+  "toxicityLevel": "DANGER",
+  "description": "Des doses supérieures à 10 g de safran peuvent provoquer un avortement et entraîner plusieurs effets secondaires graves. En quantités culinaires minimes, il est toléré.",
+  "pregnancySafetyNote": "Des doses supérieures à 10 g peuvent provoquer un avortement et entraîner plusieurs effets secondaires graves.",
+  "isAbortifacient": true,
+  "isUterotonic": true,
+  "symptomLinks": [
+    "Stress"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Abortif",
+      "details": "Des doses supérieures à 10 g peuvent provoquer un avortement. Risque dose-dépendant."
+    }
+  ],
+  "sources": []
+}

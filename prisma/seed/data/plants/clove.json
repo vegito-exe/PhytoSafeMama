@@ -1,0 +1,38 @@
+{
+  "nameEn": "Clove",
+  "nameFr": "Giroflier",
+  "nameAr": "قرنفل",
+  "nameScientific": "Caryophyllus aromaticus",
+  "family": "Myrtaceae",
+  "botanicalDescription": "Arbre originaire des îles Moluques à feuilles persistantes. Les fleurs blanc rosé sont regroupées en cymes. Le clou de girofle comporte un hypanthe quadrangulaire allongé et une tête globuleuse.",
+  "partUsed": "Le bouton floral séché (clou)",
+  "chemicalComposition": [
+    "Huile essentielle riche en eugénol",
+    "β-caryophyllène",
+    "Composés terpéniques, aromatiques, aliphatiques et hétérocycliques",
+    "Hétérosides de chromones"
+  ],
+  "therapeuticEffects": [
+    "Antalgique contre les douleurs dentaires et céphalées",
+    "Antiseptique buccal",
+    "Utilisé pour les troubles digestifs : ballonnements, flatulences, digestion lente",
+    "Effet anesthésique local, anti-inflammatoire et modérément bactéricide"
+  ],
+  "toxicityLevel": "DANGER",
+  "description": "Le giroflier peut stimuler les contractions utérines. Son huile essentielle est strictement déconseillée pendant la grossesse.",
+  "pregnancySafetyNote": "Le giroflier peut stimuler les contractions utérines. Son huile essentielle est strictement déconseillée pendant la grossesse.",
+  "isAbortifacient": false,
+  "isUterotonic": true,
+  "symptomLinks": [
+    "Douleurs",
+    "Digestion"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Utérotonique",
+      "details": "Peut stimuler les contractions utérines. L'huile essentielle est strictement déconseillée pendant la grossesse."
+    }
+  ],
+  "sources": []
+}

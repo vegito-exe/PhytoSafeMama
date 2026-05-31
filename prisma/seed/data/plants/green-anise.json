@@ -1,0 +1,47 @@
+{
+  "nameEn": "Green Anise",
+  "nameFr": "Anis vert",
+  "nameAr": "حبة حلاوة",
+  "nameScientific": "Pimpinella anisum",
+  "family": "Apiaceae",
+  "botanicalDescription": "Plante largement cultivée sur le pourtour méditerranéen et au Proche-Orient. Les feuilles basales sont cordiformes, tandis que les feuilles supérieures sont trifides à divisions linéaires. Le fruit est un diakène ovoïde ou piriforme vert jaunâtre.",
+  "partUsed": "Le fruit",
+  "chemicalComposition": [
+    "Polysaccharides",
+    "Lipides (15–20 %)",
+    "Flavonoïdes",
+    "Glucoside de l'acide p-hydroxybenzoïque",
+    "Huile essentielle riche en E-anéthole"
+  ],
+  "therapeuticEffects": [
+    "Traitement des troubles digestifs : ballonnements, flatulences, digestion lente",
+    "Effet spasmolytique et carminatif",
+    "Galactagogue",
+    "Expectorant",
+    "Effet relaxant et légèrement œstrogénique"
+  ],
+  "toxicityLevel": "CAUTION",
+  "description": "L'extrait aqueux peut être consommé sous forme de thé pour une courte durée. L'huile essentielle et l'extrait alcoolique sont déconseillés pendant la grossesse en raison de l'effet œstrogénique de l'anéthole.",
+  "pregnancySafetyNote": "L'extrait aqueux peut être consommé sous forme de thé pour une courte durée. L'huile essentielle et l'extrait alcoolique sont déconseillés pendant la grossesse.",
+  "isAbortifacient": false,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Digestion",
+    "Ballonnements",
+    "Allaitement",
+    "Toux"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Huile essentielle contre-indiquée",
+      "details": "L'huile essentielle et les extraits alcooliques sont déconseillés pendant la grossesse en raison des effets œstrogéniques de l'anéthole."
+    }
+  ],
+  "sources": [
+    {
+      "refId": 330,
+      "citation": "Committee on Herbal Medicinal Products: Community herbal monograph on pimpinella anisum l., aetheroleum. London: European Medicines Agency; 2013."
+    }
+  ]
+}

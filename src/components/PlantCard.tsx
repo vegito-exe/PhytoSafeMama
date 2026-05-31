@@ -9,27 +9,53 @@ import { TrafficLightBadge } from "./TrafficLightBadge";
 import { Modal } from "./ui/modal";
 
 interface PlantCardProps {
-  nameGeneral: string;
-  nameAlgerian: string;
+  nameFr: string;
+  nameAr: string;
+  nameEn: string;
   nameScientific: string;
+  family: string;
   toxicityLevel: ToxicityLevel;
   description?: string;
+  partUsed?: string;
+  chemicalComposition?: string[];
+  therapeuticEffects?: string[];
+  pregnancySafetyNote?: string;
+  isAbortifacient?: boolean;
+  isUterotonic?: boolean;
   className?: string;
   onClick?: () => void;
 }
 
 export function PlantCard({
-  nameGeneral,
-  nameAlgerian,
+  nameFr,
+  nameAr,
+  nameEn,
   nameScientific,
+  family,
   toxicityLevel,
   description,
+  partUsed,
+  chemicalComposition,
+  therapeuticEffects,
+  pregnancySafetyNote,
+  isAbortifacient,
+  isUterotonic,
   className,
   onClick,
 }: PlantCardProps) {
-  const [imgError, setImgError] = useState(false);
+  const [imgStatus, setImgStatus] = useState<"webp" | "jpg" | "error">("webp");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const imageUrl = imgError ? PLANT_FALLBACK_IMAGE : getPlantImageUrl(nameGeneral);
+  const imageUrl = imgStatus === "error" ? PLANT_FALLBACK_IMAGE : getPlantImageUrl(nameFr, imgStatus);
+
+  const handleImageError = () => {
+    if (imgStatus === "webp") {
+      setImgStatus("jpg");
+    } else {
+      setImgStatus("error");
+    }
+  };
+
+  const hasError = imgStatus === "error";
 
   const borderAccent: Record<ToxicityLevel, string> = {
     SAFE: "border-l-emerald-400",
@@ -67,18 +93,16 @@ export function PlantCard({
       <div className="relative h-40 w-full bg-gradient-to-br from-emerald-50/80 to-amber-50/30 overflow-hidden">
         <Image
           src={imageUrl}
-          alt={nameGeneral}
+          alt={nameFr}
           fill
           sizes="(max-width: 640px) 100vw, 50vw"
           className={cn(
-            "object-contain p-4 transition-transform duration-500 group-hover:scale-110",
-            imgError && "opacity-50 p-8"
+            "object-contain p-4 transition-transform duration-500 group-hover:scale-110 ",
+            hasError && "opacity-50 p-8"
           )}
-          onError={() => setImgError(true)}
+          onError={handleImageError}
           unoptimized
         />
-        {/* Gradient overlay at bottom */}
-        <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-white/90 to-transparent" />
         {/* Badge positioned on image */}
         <div className="absolute top-3 right-3">
           <TrafficLightBadge level={toxicityLevel} size="sm" />
@@ -87,18 +111,24 @@ export function PlantCard({
 
       {/* Content section */}
       <div className="p-4 pt-2">
-        {/* General name */}
+        {/* French name */}
         <h3 className="text-lg font-bold text-foreground leading-tight truncate">
-          {nameGeneral}
+          {nameFr}
         </h3>
-        {/* Algerian name */}
+        {/* Arabic name */}
         <p className="text-sm font-medium text-primary/70 truncate mt-0.5">
-          {nameAlgerian}
+          {nameAr}
         </p>
         {/* Scientific name */}
         <p className="text-xs italic text-muted-foreground/60 truncate">
           {nameScientific}
         </p>
+        {/* Family */}
+        {family && (
+          <p className="text-xs text-muted-foreground/50 truncate">
+            {family}
+          </p>
+        )}
         {/* Description */}
         {description && (
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-muted-foreground">
@@ -118,9 +148,10 @@ export function PlantCard({
           <div className="relative h-48 w-full bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl overflow-hidden mb-6">
             <Image
               src={imageUrl}
-              alt={nameGeneral}
+              alt={nameFr}
               fill
-              className="object-contain p-4"
+              className={cn("object-contain p-4", hasError && "opacity-50 object-scale-down p-8")}
+              onError={handleImageError}
               unoptimized
             />
             <div className="absolute top-3 right-3">
@@ -129,25 +160,106 @@ export function PlantCard({
           </div>
 
           <h2 className="text-2xl font-bold text-green-900 leading-tight">
-            {nameGeneral}
+            {nameFr}
           </h2>
-          {nameAlgerian && (
+          {nameEn && (
+            <p className="text-sm font-medium text-slate-600 mt-0.5">
+              {nameEn}
+            </p>
+          )}
+          {nameAr && (
             <p className="text-md font-medium text-[#E91E8C] mt-1">
-              Appellation algérienne: {nameAlgerian}
+              {nameAr}
             </p>
           )}
           {nameScientific && (
-            <p className="text-sm italic text-slate-500 mt-1 mb-4">
-              Nom scientifique: {nameScientific}
+            <p className="text-sm italic text-slate-500 mt-1">
+              {nameScientific}
+            </p>
+          )}
+          {family && (
+            <p className="text-xs text-slate-400 mb-4">
+              Famille : {family}
             </p>
           )}
 
+          {/* Pregnancy Safety Alert */}
+          {(isAbortifacient || isUterotonic || pregnancySafetyNote) && (
+            <div className={cn(
+              "rounded-xl p-4 border mt-2 mb-3",
+              toxicityLevel === "DANGER" ? "bg-rose-50 border-rose-200" :
+              toxicityLevel === "CAUTION" ? "bg-amber-50 border-amber-200" :
+              "bg-emerald-50 border-emerald-200"
+            )}>
+              <h4 className="font-semibold text-sm mb-1 flex items-center gap-1.5">
+                {toxicityLevel === "DANGER" ? "🔴" : toxicityLevel === "CAUTION" ? "🟡" : "🟢"}
+                Sécurité pendant la grossesse
+              </h4>
+              {pregnancySafetyNote && (
+                <p className="text-sm text-slate-700">{pregnancySafetyNote}</p>
+              )}
+              {(isAbortifacient || isUterotonic) && (
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {isAbortifacient && (
+                    <span className="inline-flex items-center rounded-full bg-rose-100 px-2.5 py-0.5 text-xs font-medium text-rose-800">
+                      ⚠️ Abortifacient
+                    </span>
+                  )}
+                  {isUterotonic && (
+                    <span className="inline-flex items-center rounded-full bg-rose-100 px-2.5 py-0.5 text-xs font-medium text-rose-800">
+                      ⚠️ Utérotonique
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Monograph Details */}
           <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-2">
             <h4 className="font-semibold text-green-900 mb-2">Description & Informations</h4>
             <p className="text-slate-700 leading-relaxed whitespace-pre-line">
               {description || "Aucune description détaillée n'est disponible pour cette plante."}
             </p>
           </div>
+
+          {/* Part Used & Composition */}
+          {(partUsed || (chemicalComposition && chemicalComposition.length > 0)) && (
+            <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-3">
+              {partUsed && (
+                <div className="mb-2">
+                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Partie utilisée</span>
+                  <p className="text-sm text-slate-700 mt-0.5">{partUsed}</p>
+                </div>
+              )}
+              {chemicalComposition && chemicalComposition.length > 0 && (
+                <div>
+                  <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Composition chimique</span>
+                  <div className="flex flex-wrap gap-1.5 mt-1">
+                    {chemicalComposition.map((comp) => (
+                      <span key={comp} className="inline-flex rounded-full bg-blue-50 px-2.5 py-0.5 text-xs text-blue-700 border border-blue-100">
+                        {comp}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Therapeutic Effects */}
+          {therapeuticEffects && therapeuticEffects.length > 0 && (
+            <div className="bg-slate-50 rounded-xl p-5 border border-slate-100 mt-3">
+              <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Effets thérapeutiques</span>
+              <div className="flex flex-wrap gap-1.5 mt-1">
+                {therapeuticEffects.map((effect) => (
+                  <span key={effect} className="inline-flex rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs text-emerald-700 border border-emerald-100">
+                    {effect}
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </Modal>
     </>

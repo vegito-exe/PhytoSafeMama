@@ -1,0 +1,48 @@
+{
+  "nameEn": "Cinnamon",
+  "nameFr": "Cannelle",
+  "nameAr": "القرفة",
+  "nameScientific": "Cinnamomum verum",
+  "family": "Lauraceae",
+  "botanicalDescription": "Arbre de 10 m de haut, à feuillage dense et toujours vert. Ses feuilles mesurent 2 à 3 cm de long et sont ovales. Les fleurs, disposées en grandes panicules, ont une odeur désagréable. L'écorce raclée (suber supprimé) est caractéristique par son aspect et son odeur.",
+  "partUsed": "L'écorce",
+  "chemicalComposition": [
+    "Huile essentielle (0,5–2,5 %) : (E)-cinnamaldéhyde (63,1–75,7 %), eugénol, (E)-acétate de cinnamyle (0,3–10,6 %)",
+    "Flavonoïdes : quercétine, kaempférol et quercitrine",
+    "Coumarine"
+  ],
+  "therapeuticEffects": [
+    "Activité antibactérienne (B. anthracis, E. coli, P. aeruginosa, S. aureus, S. typhimurium)",
+    "Effet antifongique"
+  ],
+  "toxicityLevel": "DANGER",
+  "description": "La cannelle présente une contre-indication absolue pendant la grossesse ainsi qu'en cas d'ulcère gastrique. Les extraits de feuilles ont montré des effets abortifs et fœtotoxiques chez les rats.",
+  "pregnancySafetyNote": "Contre-indication absolue pendant la grossesse ainsi qu'en cas d'ulcère gastrique.",
+  "isAbortifacient": true,
+  "isUterotonic": false,
+  "symptomLinks": [
+    "Immunité"
+  ],
+  "warnings": [
+    {
+      "trimester": 0,
+      "warningType": "Abortif",
+      "details": "Les extraits de feuilles ont démontré des effets abortifs et embryofœtotoxiques dans les études animales."
+    },
+    {
+      "trimester": 0,
+      "warningType": "Ulcère gastrique",
+      "details": "Contre-indiquée en cas d'ulcères gastriques en raison des propriétés irritantes du cinnamaldéhyde."
+    }
+  ],
+  "sources": [
+    {
+      "refId": 373,
+      "citation": "Lemonica IP, Macedo AB. Abortive and/or embryofetotoxic effect of Cinnamomum zeylanicum leaf extracts in pregnant rats. Fitoterapia. 1994;65(5):431-4."
+    },
+    {
+      "refId": 379,
+      "citation": "Verspohl EJ, et al. Antidiabetic effect of Cinnamomum cassia and Cinnamomum zeylanicum in vivo and in vitro. Phytotherapy research. 2005;19(3):203-6."
+    }
+  ]
+}

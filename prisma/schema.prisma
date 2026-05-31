@@ -1,5 +1,5 @@
-// PhytoGrossesse Algérie - Database Schema
-// Every plant has 3 names: General, Algerian, Scientific
+// PhytoSafeMama — Monograph Database Schema
+// Plants with multilingual names, monograph data, and pregnancy safety
 
 generator client {
   provider = "prisma-client-js"
@@ -10,18 +10,29 @@ datasource db {
 }
 
 enum ToxicityLevel {
-  SAFE      // 🟢 Indiqué
-  CAUTION   // 🟡 Prudence
-  DANGER    // 🔴 Contre-indiqué
+  SAFE      // 🟢 Safe / Indiqué
+  CAUTION   // 🟡 Caution / Prudence
+  DANGER    // 🔴 Contraindicated / Contre-indiqué
 }
 
 model Plant {
-  id             String   @id @default(uuid())
-  nameGeneral    String   // e.g., "Gingembre"
-  nameAlgerian   String   // e.g., "Skenjbir"
-  nameScientific String   // e.g., "Zingiber officinale"
-  toxicityLevel  ToxicityLevel
-  description    String
+  id                  String        @id @default(uuid())
+  nameEn              String        // English name
+  nameFr              String        // French name
+  nameAr              String        // Arabic name
+  nameScientific      String        // Latin binomial
+  family              String        // Botanical family
+  botanicalDescription String       @default("")
+  partUsed            String        @default("")
+  chemicalComposition String[]      // Array of compounds
+  therapeuticEffects  String[]      // Array of effects
+  toxicityLevel       ToxicityLevel
+  description         String        // General description for display
+
+  // Pregnancy safety
+  pregnancySafetyNote String        @default("")
+  isAbortifacient     Boolean       @default(false)
+  isUterotonic        Boolean       @default(false)
 
   symptoms PlantSymptom[]
   warnings ToxicityWarning[]
@@ -33,7 +44,7 @@ model Plant {
 
 model Symptom {
   id     String         @id @default(uuid())
-  name   String         @unique // e.g., "Nausées", "Stress"
+  name   String         @unique
   plants PlantSymptom[]
 }
 
@@ -50,16 +61,15 @@ model ToxicityWarning {
   id          String @id @default(uuid())
   plantId     String
   trimester   Int    // 1, 2, 3 (or 0 for all trimesters)
-  warningType String // e.g., "Tératogène", "Fœtotoxique", "Abortif"
+  warningType String // e.g., "Abortifacient", "Uterotonic", "Fetotoxic"
   details     String
   plant       Plant  @relation(fields: [plantId], references: [id], onDelete: Cascade)
 }
 
 model Source {
-  id          String  @id @default(uuid())
-  plantId     String
-  thesisTitle String
-  university  String
-  urlOrPage   String?
-  plant       Plant   @relation(fields: [plantId], references: [id], onDelete: Cascade)
+  id       String @id @default(uuid())
+  plantId  String
+  refId    Int    // Numeric reference ID from bibliography
+  citation String // Full citation text
+  plant    Plant  @relation(fields: [plantId], references: [id], onDelete: Cascade)
 }
